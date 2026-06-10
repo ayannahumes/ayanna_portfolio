@@ -20,9 +20,9 @@ const links = [
   {
     icon: FileText,
     label: "Resume",
-    handle: "ayanna-humes-resume.pdf",
+    handle: "ayanna-humes-resume-doc.pdf",
     description: "Full work history, skills, and engineering background.",
-    href: `${import.meta.env.BASE_URL}/ayanna-humes-resume.pdf`,
+    href: `${import.meta.env.BASE_URL}/ayanna-humes-resume-doc.pdf`,
   },
   {
     icon: Mail,

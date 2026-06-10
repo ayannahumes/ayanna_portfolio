@@ -67,9 +67,9 @@ export function Hero() {
                 variant="outline"
                 size="lg"
                 className="gap-2"
-                onClick={() => window.open(`${import.meta.env.BASE_URL}/ayanna-humes-resume.pdf`, "_blank")}
+                onClick={() => window.open(`${import.meta.env.BASE_URL}/ayanna-humes-resume-doc.pdf`, "_blank")}
               >
-                <a href={`${import.meta.env.BASE_URL}/ayanna-humes-resume.pdf`} download>
+                <a href={`${import.meta.env.BASE_URL}/ayanna-humes-resume-doc.pdf`} download>
                   <Download size={16} />
                    Download Resume
                 </a>
