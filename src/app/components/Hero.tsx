@@ -67,9 +67,9 @@ export function Hero() {
                 variant="outline"
                 size="lg"
                 className="gap-2"
-                onClick={() => window.open("/ayanna-humes-resume.pdf", "_blank")}
+                onClick={() => window.open(`${import.meta.env.BASE_URL}/ayanna-humes-resume.pdf`, "_blank")}
               >
-                <a href="/ayanna-humes-resume.pdf" download>
+                <a href={`${import.meta.env.BASE_URL}/ayanna-humes-resume.pdf`} download>
                   <Download size={16} />
                    Download Resume
                 </a>
@@ -113,7 +113,7 @@ export function Hero() {
               style={{ width: 300, height: 360 }}
             >
               <img
-                src="/ayanna-portrait.jpg"
+                src={`${import.meta.env.BASE_URL}/ayanna-portrait.jpg`}
                 alt="Ayanna Humes"
                 className="absolute inset-0 w-full h-full object-cover"
               />
