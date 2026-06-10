@@ -7,7 +7,7 @@ const links = [
     handle: "@ayannahumes",
     description:
       "Open source work, component libraries, and personal projects.",
-    href: "https://github.com",
+    href: "https://github.com/ayannahumes",
   },
   {
     icon: Linkedin,
