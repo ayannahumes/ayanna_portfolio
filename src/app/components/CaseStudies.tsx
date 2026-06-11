@@ -95,37 +95,18 @@ const caseStudies: CaseStudy[] = [
 
 export function CaseStudies() {
   return (
-    <section id="case-studies" className="py-32 bg-(--color-action-secondary)">
+    <section id="case-studies" className="bg-(--color-background-page) py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Section header */}
         <div className="mb-16">
-          <p
-            className="text-(--color-text-muted) mb-3"
-            style={{
-              fontSize: "0.8125rem",
-              fontWeight: 500,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-            }}
-          >
+          <p className="mb-3 text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) tracking-(--text-style-caption-letter-spacing) uppercase">
             Featured Work
           </p>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-            <h2
-              className="text-(--color-text-primary) tracking-tight"
-              style={{
-                fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)",
-                fontWeight: 700,
-                lineHeight: 1.15,
-                letterSpacing: "-0.025em",
-              }}
-            >
+            <h2 className="text-(--color-text-primary) text-[length:var(--text-style-h1-font-size)] font-(--text-style-h1-font-weight) leading-(--text-style-h1-line-height) tracking-(--text-style-h1-letter-spacing)">
               Case studies.
             </h2>
-            <p
-              className="text-(--color-text-muted) max-w-md"
-              style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}
-            >
+            <p className="max-w-md text-(--color-text-muted) text-[length:var(--text-style-body-font-size)] font-(--text-style-body-font-weight) leading-(--text-style-body-line-height) tracking-(--text-style-body-letter-spacing)">
               Selected projects that demonstrate systems thinking, engineering
               depth, and design craft.
             </p>
@@ -137,7 +118,7 @@ export function CaseStudies() {
           {caseStudies.map((cs) => (
             <Card
               key={cs.id}
-              className="group bg-white border-(--color-border-default) hover:border-(--color-text-primary)/20 hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300 overflow-hidden cursor-pointer gap-0"
+              className="group cursor-pointer gap-0 overflow-hidden border-(length:--card-border-width) border-(--card-border) bg-(--card-background) transition-all duration-300 hover:border-(--color-text-primary)/20 hover:shadow-(--card-shadow)"
             >
               {/* Top accent bar */}
               <div className="h-px bg-gradient-to-r from-(--color-text-primary)/10 via-(--color-text-primary)/20 to-(--color-text-primary)/10" />
@@ -145,30 +126,14 @@ export function CaseStudies() {
               <CardHeader className="px-8 pt-8 pb-0 gap-3">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <p
-                      className="text-(--color-text-muted) mb-1"
-                      style={{
-                        fontSize: "0.75rem",
-                        fontWeight: 500,
-                        letterSpacing: "0.08em",
-                        textTransform: "uppercase",
-                      }}
-                    >
+                    <p className="mb-1 text-(--card-description-text) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) tracking-(--text-style-caption-letter-spacing) uppercase">
                       {cs.company} · {cs.year}
                     </p>
-                    <CardTitle
-                      className="text-(--color-text-primary)"
-                      style={{
-                        fontSize: "1.375rem",
-                        fontWeight: 700,
-                        lineHeight: 1.25,
-                        letterSpacing: "-0.02em",
-                      }}
-                    >
+                    <CardTitle className="text-(--card-title-text) text-[length:var(--text-style-h3-font-size)] font-(--text-style-h3-font-weight) leading-(--text-style-h3-line-height) tracking-(--text-style-h3-letter-spacing)">
                       {cs.title}
                     </CardTitle>
                   </div>
-                  <div className="size-8 rounded-full border border-(--color-border-default) flex items-center justify-center text-(--color-text-muted) group-hover:bg-(--color-text-primary) group-hover:text-white group-hover:border-(--color-text-primary) transition-all shrink-0 mt-0.5">
+                  <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full border border-(--card-border) text-(--card-description-text) transition-all group-hover:border-(--color-action-primary) group-hover:bg-(--color-action-primary) group-hover:text-(--color-text-inverse)">
                     <Icon name="arrow-up-right" size="sm" />
                   </div>
                 </div>
@@ -183,20 +148,10 @@ export function CaseStudies() {
                     { label: "Impact", text: cs.impact },
                   ].map((item) => (
                     <div key={item.label}>
-                      <p
-                        className="text-(--color-text-primary) mb-1"
-                        style={{
-                          fontSize: "0.75rem",
-                          fontWeight: 600,
-                          letterSpacing: "0.06em",
-                          textTransform: "uppercase",
-                        }}
-                      >
+                      <p className="mb-1 text-(--card-title-text) text-[length:var(--text-style-caption-font-size)] font-(--text-style-h3-font-weight) leading-(--text-style-caption-line-height) tracking-(--text-style-caption-letter-spacing) uppercase">
                         {item.label}
                       </p>
-                      <CardDescription
-                        style={{ fontSize: "0.9rem", lineHeight: 1.65 }}
-                      >
+                      <CardDescription className="text-(--card-description-text) text-[length:var(--text-style-body-font-size)] font-(--text-style-body-font-weight) leading-(--text-style-body-line-height) tracking-(--text-style-body-letter-spacing)">
                         {item.text}
                       </CardDescription>
                     </div>
@@ -205,15 +160,7 @@ export function CaseStudies() {
 
                 {/* Focus areas */}
                 <div>
-                  <p
-                    className="text-(--color-text-muted) mb-2.5"
-                    style={{
-                      fontSize: "0.75rem",
-                      fontWeight: 500,
-                      letterSpacing: "0.06em",
-                      textTransform: "uppercase",
-                    }}
-                  >
+                  <p className="mb-2.5 text-(--card-description-text) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) tracking-(--text-style-caption-letter-spacing) uppercase">
                     Focus
                   </p>
                   <div className="flex flex-wrap gap-1.5">
@@ -221,8 +168,7 @@ export function CaseStudies() {
                       <Badge
                         key={f}
                         variant="secondary"
-                        className="rounded-full px-2.5 py-0.5 border-0 bg-(--color-action-secondary) text-(--color-text-primary)"
-                        style={{ fontSize: "0.75rem", fontWeight: 500 }}
+                        className="rounded-(--badge-shape-radius) border-0 bg-(--badge-secondary-background) px-(--badge-spacing-padding-x) py-(--badge-spacing-padding-y) text-(--badge-secondary-text) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight)"
                       >
                         {f}
                       </Badge>
@@ -235,8 +181,7 @@ export function CaseStudies() {
                   {cs.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-(--color-text-muted)"
-                      style={{ fontSize: "0.75rem" }}
+                      className="text-(--card-description-text) text-[length:var(--text-style-caption-font-size)] font-(--text-style-body-font-weight) leading-(--text-style-caption-line-height)"
                     >
                       #{tag}
                     </span>

@@ -26,6 +26,8 @@
   --color-feedback-warning-subtle: oklch(0.95 0.08 70);
   --color-feedback-error: oklch(0.637 0.237 25.331);
   --color-feedback-error-subtle: oklch(0.93 0.06 25);
+  --gradient-grid-horizontal: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  --gradient-grid-vertical: linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
 }
 
 /* Default Dark */
@@ -54,6 +56,8 @@
   --color-feedback-warning-subtle: oklch(0.55 0.14 70);
   --color-feedback-error: oklch(0.637 0.237 25.331);
   --color-feedback-error-subtle: oklch(0.396 0.141 25.723);
+  --gradient-grid-horizontal: linear-gradient(color-mix(in oklab, var(--color-background-page) 92%, var(--color-text-primary)) 1px, transparent 1px);
+  --gradient-grid-vertical: linear-gradient(90deg, color-mix(in oklab, var(--color-background-page) 92%, var(--color-text-primary)) 1px, transparent 1px);
 }
 
 /* Brown Light - inherits default tokens, then applies brown overrides. */
@@ -81,6 +85,8 @@
   --color-feedback-warning-subtle: oklch(0.95 0.08 70);
   --color-feedback-error: oklch(0.637 0.237 25.331);
   --color-feedback-error-subtle: oklch(0.93 0.06 25);
+  --gradient-grid-horizontal: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  --gradient-grid-vertical: linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
 }
 
 /* Brown Dark - inherits default tokens, then applies brown overrides. */
@@ -109,4 +115,6 @@
   --color-feedback-warning-subtle: oklch(0.55 0.14 70);
   --color-feedback-error: oklch(0.637 0.237 25.331);
   --color-feedback-error-subtle: oklch(0.396 0.141 25.723);
+  --gradient-grid-horizontal: linear-gradient(color-mix(in oklab, var(--color-background-page) 92%, var(--color-text-primary)) 1px, transparent 1px);
+  --gradient-grid-vertical: linear-gradient(90deg, color-mix(in oklab, var(--color-background-page) 92%, var(--color-text-primary)) 1px, transparent 1px);
 }

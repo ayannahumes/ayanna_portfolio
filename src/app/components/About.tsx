@@ -39,30 +39,14 @@ const highlights = [
 
 export function About() {
   return (
-    <section id="about" className="py-32 bg-white">
+    <section id="about" className="bg-(--color-background-page) py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Section header */}
         <div className="mb-16">
-          <p
-            className="text-(--color-text-muted) mb-3"
-            style={{
-              fontSize: "0.8125rem",
-              fontWeight: 500,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-            }}
-          >
+          <p className="mb-3 text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) tracking-(--text-style-caption-letter-spacing) uppercase">
             About
           </p>
-          <h2
-            className="text-(--color-text-primary) tracking-tight max-w-2xl"
-            style={{
-              fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)",
-              fontWeight: 700,
-              lineHeight: 1.15,
-              letterSpacing: "-0.025em",
-            }}
-          >
+          <h2 className="max-w-2xl text-(--color-text-primary) text-[length:var(--text-style-h1-font-size)] font-(--text-style-h1-font-weight) leading-(--text-style-h1-line-height) tracking-(--text-style-h1-letter-spacing)">
             Engineering the layer between design and production.
           </h2>
         </div>
@@ -70,10 +54,7 @@ export function About() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16">
           {/* Bio */}
           <div>
-            <div
-              className="space-y-5 text-(--color-text-muted)"
-              style={{ fontSize: "1rem", lineHeight: 1.75 }}
-            >
+            <div className="space-y-5 text-(--color-text-muted) text-[length:var(--text-style-body-font-size)] font-(--text-style-body-font-weight) leading-(--text-style-body-line-height) tracking-(--text-style-body-letter-spacing)">
               <p>
                 I'm a Senior UX Engineer specializing in design systems,
                 component architecture, and developer experience. My background
@@ -99,19 +80,13 @@ export function About() {
               {highlights.map((h) => (
                 <div key={h.label} className="flex gap-4">
                   <div className="mt-1 size-5 shrink-0 rounded-full bg-(--color-text-primary) flex items-center justify-center">
-                    <div className="size-1.5 rounded-full bg-white" />
+                    <div className="size-1.5 rounded-full bg-(--color-text-inverse)" />
                   </div>
                   <div>
-                    <p
-                      className="text-(--color-text-primary) mb-1"
-                      style={{ fontSize: "0.9375rem", fontWeight: 600 }}
-                    >
+                    <p className="mb-1 text-(--color-text-primary) text-[length:var(--text-style-body-font-size)] font-(--text-style-h3-font-weight) leading-(--text-style-body-line-height)">
                       {h.label}
                     </p>
-                    <p
-                      className="text-(--color-text-muted)"
-                      style={{ fontSize: "0.875rem", lineHeight: 1.65 }}
-                    >
+                    <p className="text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-body-font-weight) leading-(--text-style-body-line-height)">
                       {h.description}
                     </p>
                   </div>
@@ -122,16 +97,7 @@ export function About() {
 
           {/* Skills */}
           <div>
-            <p
-              className="text-(--color-text-primary) mb-6"
-              style={{
-                fontSize: "0.8125rem",
-                fontWeight: 500,
-                letterSpacing: "0.06em",
-                textTransform: "uppercase",
-                color: "var(--color-text-muted)",
-              }}
-            >
+            <p className="mb-6 text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) tracking-(--text-style-caption-letter-spacing) uppercase">
               Core skills &amp; tools
             </p>
             <div className="flex flex-wrap gap-2">
@@ -139,8 +105,7 @@ export function About() {
                 <Badge
                   key={skill}
                   variant="outline"
-                  className="px-3 py-1 rounded-full border-(--color-border-default) text-(--color-text-primary) bg-white hover:bg-(--color-action-secondary) transition-colors cursor-default"
-                  style={{ fontSize: "0.8125rem", fontWeight: 500 }}
+                  className="cursor-default rounded-(--badge-shape-radius) border-(--badge-outline-border) bg-(--badge-outline-background) px-(--badge-spacing-padding-x) py-(--badge-spacing-padding-y) text-(--badge-outline-text) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) hover:bg-(--button-outline-background-hover) transition-colors"
                 >
                   {skill}
                 </Badge>
@@ -148,16 +113,8 @@ export function About() {
             </div>
 
             {/* Experience strip */}
-            <div className="mt-12 p-6 rounded-xl border border-(--color-border-default) bg-(--color-action-secondary)">
-              <p
-                className="text-(--color-text-muted) mb-4"
-                style={{
-                  fontSize: "0.75rem",
-                  fontWeight: 500,
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                }}
-              >
+            <div className="mt-12 rounded-(--card-radius) border-(length:--card-border-width) border-(--card-border) bg-(--card-background) p-(--card-content-spacing)">
+              <p className="mb-4 text-(--card-description-text) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) tracking-(--text-style-caption-letter-spacing) uppercase">
                 Experience
               </p>
               <div className="space-y-4">
@@ -188,23 +145,14 @@ export function About() {
                     className="flex items-start justify-between gap-4"
                   >
                     <div>
-                      <p
-                        className="text-(--color-text-primary)"
-                        style={{ fontSize: "0.9375rem", fontWeight: 500 }}
-                      >
+                      <p className="text-(--card-title-text) text-[length:var(--text-style-body-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-body-line-height)">
                         {exp.role}
                       </p>
-                      <p
-                        className="text-(--color-text-muted)"
-                        style={{ fontSize: "0.8125rem" }}
-                      >
+                      <p className="text-(--card-description-text) text-[length:var(--text-style-caption-font-size)] font-(--text-style-body-font-weight) leading-(--text-style-caption-line-height)">
                         {exp.company}
                       </p>
                     </div>
-                    <span
-                      className="text-(--color-text-muted) shrink-0"
-                      style={{ fontSize: "0.8125rem" }}
-                    >
+                    <span className="shrink-0 text-(--card-description-text) text-[length:var(--text-style-caption-font-size)] font-(--text-style-body-font-weight) leading-(--text-style-caption-line-height)">
                       {exp.period}
                     </span>
                   </div>

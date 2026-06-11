@@ -58,4 +58,6 @@
   --card-description-text: var(--color-text-secondary);
   --card-content-text: var(--color-text-primary);
   --card-content-spacing: var(--space-lg);
+  --hero-background-grid-horizontal: var(--gradient-grid-horizontal);
+  --hero-background-grid-vertical: var(--gradient-grid-vertical);
 }

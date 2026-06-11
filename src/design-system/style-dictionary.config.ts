@@ -30,6 +30,8 @@ const activeTokens = [
   "feedback-error-subtle"
 ];
 
+const activeGradientTokens = ["grid-horizontal", "grid-vertical"];
+
 const componentTokens = JSON.parse(
   readFileSync("src/design-system/tokens/component/component.json", "utf8")
 );
@@ -124,6 +126,16 @@ function activeThemeBlock({
 
     if (value) {
       lines.push(`  --color-${token}: ${value};`);
+    }
+  });
+
+  activeGradientTokens.forEach((token) => {
+    const gradientParts = token.split("-");
+    const gradientToken = tokenName("gradient", "grid", mode, ...gradientParts.slice(1));
+    const value = tokenValues.get(gradientToken);
+
+    if (value) {
+      lines.push(`  --gradient-${token}: ${value};`);
     }
   });
 

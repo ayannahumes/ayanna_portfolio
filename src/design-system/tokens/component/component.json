@@ -111,6 +111,12 @@
         "text": { "value": "{theme.active.text.primary}", "type": "color" },
         "spacing": { "value": "{space.lg}", "type": "dimension" }
       }
+    },
+    "hero": {
+      "background": {
+        "gridHorizontal": { "value": "{gradient.grid.horizontal}", "type": "gradient" },
+        "gridVertical": { "value": "{gradient.grid.vertical}", "type": "gradient" }
+      }
     }
   }
 }

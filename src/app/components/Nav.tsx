@@ -50,14 +50,14 @@ export function Nav() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-(--color-border-default) shadow-[0_1px_0_rgba(0,0,0,0.06)]"
+          ? "bg-(--color-background-page)/90 backdrop-blur-md border-b border-(--color-border-default) shadow-(--card-shadow)"
           : "bg-transparent",
       )}
     >
       <nav className="max-w-7xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
         <a
           href="#"
-          className="text-(--color-text-primary) font-semibold tracking-tight text-sm"
+          className="text-(--color-text-primary) text-[length:var(--text-style-body-font-size)] font-(--text-style-h3-font-weight) leading-(--text-style-body-line-height) tracking-(--text-style-body-letter-spacing)"
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
@@ -72,7 +72,7 @@ export function Nav() {
             <li key={link.href}>
               <button
                 onClick={() => handleLink(link.href)}
-                className="px-3 py-1.5 text-sm text-(--color-text-muted) hover:text-(--color-text-primary) transition-colors rounded-md hover:bg-(--color-action-secondary-hover)"
+                className="px-3 py-1.5 text-(--button-ghost-text) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) transition-colors rounded-(--button-shape-radius) hover:bg-(--button-ghost-background-hover) hover:text-(--color-text-primary)"
               >
                 {link.label}
               </button>
@@ -87,57 +87,40 @@ export function Nav() {
         >
           Get in touch
         </Button>
-        
+
         {/* Theme toggle */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-
-            <button aria-label="Open settings">
-
+            <button
+              aria-label="Open settings"
+              className="rounded-(--button-shape-radius) p-2 text-(--button-ghost-text) transition-colors hover:bg-(--button-ghost-background-hover) hover:text-(--color-text-primary)"
+            >
               <Icon name="settings" size="md" />
-
             </button>
-
           </DropdownMenuTrigger>
 
           <DropdownMenuContent align="end">
-
             <DropdownMenuLabel>Theme</DropdownMenuLabel>
 
             <DropdownMenuItem onClick={() => setTheme("default")}>
-
               Default
-
             </DropdownMenuItem>
 
-            <DropdownMenuItem onClick={() => setTheme("brown")}>
-
-              Brown
-
-            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setTheme("brown")}>Brown</DropdownMenuItem>
 
             <DropdownMenuSeparator />
 
             <DropdownMenuLabel>Mode</DropdownMenuLabel>
 
-            <DropdownMenuItem onClick={() => setMode("light")}>
+            <DropdownMenuItem onClick={() => setMode("light")}>Light</DropdownMenuItem>
 
-              Light
-
-            </DropdownMenuItem>
-
-            <DropdownMenuItem onClick={() => setMode("dark")}>
-
-              Dark
-
-            </DropdownMenuItem>
-
+            <DropdownMenuItem onClick={() => setMode("dark")}>Dark</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden p-2 rounded-md hover:bg-(--color-action-secondary-hover) transition-colors"
+          className="md:hidden p-2 rounded-(--button-shape-radius) text-(--button-ghost-text) hover:bg-(--button-ghost-background-hover) transition-colors"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -151,13 +134,13 @@ export function Nav() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md border-b border-(--color-border-default) px-6 pb-4">
+        <div className="md:hidden bg-(--color-background-page)/95 backdrop-blur-md border-b border-(--color-border-default) px-6 pb-4">
           <ul className="flex flex-col gap-0.5">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <button
                   onClick={() => handleLink(link.href)}
-                  className="w-full text-left px-3 py-2.5 text-sm text-(--color-text-muted) hover:text-(--color-text-primary) hover:bg-(--color-action-secondary-hover) rounded-md transition-colors"
+                  className="w-full text-left px-3 py-2.5 text-(--button-ghost-text) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) hover:text-(--color-text-primary) hover:bg-(--button-ghost-background-hover) rounded-(--button-shape-radius) transition-colors"
                 >
                   {link.label}
                 </button>

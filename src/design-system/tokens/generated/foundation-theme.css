@@ -28,6 +28,12 @@
   --elevation-lg: 0px 10px 15px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.05);
   --elevation-xl: 0px 20px 25px rgba(0, 0, 0, 0.12), 0px 8px 10px rgba(0, 0, 0, 0.06);
   --elevation-2xl: 0px 25px 50px rgba(0, 0, 0, 0.25);
+  --gradient-grid-horizontal: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  --gradient-grid-vertical: linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  --gradient-grid-light-horizontal: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  --gradient-grid-light-vertical: linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  --gradient-grid-dark-horizontal: linear-gradient(color-mix(in oklab, var(--color-background-page) 92%, var(--color-text-primary)) 1px, transparent 1px);
+  --gradient-grid-dark-vertical: linear-gradient(90deg, color-mix(in oklab, var(--color-background-page) 92%, var(--color-text-primary)) 1px, transparent 1px);
   --layout-container-sm: 640px;
   --layout-container-md: 768px;
   --layout-container-lg: 1024px;

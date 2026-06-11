@@ -10,44 +10,24 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center pt-16">
       {/* Subtle grid background */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)
-          `,
-          backgroundSize: "64px 64px",
-        }}
-      />
+      <div className="absolute inset-0 pointer-events-none [background-image:var(--hero-background-grid-horizontal),var(--hero-background-grid-vertical)] [background-size:64px_64px]" />
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-8 w-full py-24">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-16 items-center">
           {/* Text content */}
           <div className="max-w-3xl">
             {/* Available badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-(--color-border-default) bg-white text-xs text-(--color-text-muted) mb-8 shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
-              <span className="size-1.5 rounded-full bg-green-500 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-(--badge-shape-radius) border border-(--badge-outline-border) bg-(--badge-outline-background) text-(--badge-outline-text) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) tracking-(--text-style-caption-letter-spacing) mb-8 shadow-(--card-shadow)">
+              <span className="size-1.5 rounded-full bg-(--color-feedback-success) animate-pulse" />
               Available for new roles
             </div>
 
-            <h1
-              className="text-(--color-text-primary) mb-6 tracking-tight"
-              style={{
-                fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
-                fontWeight: 700,
-                lineHeight: 1.08,
-                letterSpacing: "-0.03em",
-              }}
-            >
+            <h1 className="mb-6 text-(--color-text-primary) text-[length:var(--text-style-display-font-size)] font-(--text-style-display-font-weight) leading-(--text-style-display-line-height) tracking-(--text-style-display-letter-spacing)">
               Building Design Systems, Developer Experiences, and
               Production-Ready Interfaces.
             </h1>
 
-            <p
-              className="text-(--color-text-muted) mb-10 max-w-2xl"
-              style={{ fontSize: "1.125rem", lineHeight: 1.6 }}
-            >
+            <p className="mb-10 max-w-2xl text-(--color-text-muted) text-[length:var(--text-style-body-lg-font-size)] font-(--text-style-body-lg-font-weight) leading-(--text-style-body-lg-line-height) tracking-(--text-style-body-lg-letter-spacing)">
               Senior UX Engineer with a background in iOS engineering, design
               systems, front-end architecture, and AI-assisted development
               workflows.
@@ -67,11 +47,19 @@ export function Hero() {
                 variant="outline"
                 size="lg"
                 className="gap-2"
-                onClick={() => window.open(`${import.meta.env.BASE_URL}/ayanna-humes-resume.pdf`, "_blank")}
+                onClick={() =>
+                  window.open(
+                    `${import.meta.env.BASE_URL}/ayanna-humes-resume.pdf`,
+                    "_blank",
+                  )
+                }
               >
-                <a href={`${import.meta.env.BASE_URL}/ayanna-humes-resume.pdf`} download>
+                <a
+                  href={`${import.meta.env.BASE_URL}/ayanna-humes-resume.pdf`}
+                  download
+                >
                   <Icon name="download" size="sm" />
-                   Download Resume
+                  Download Resume
                 </a>
               </Button>
             </div>
@@ -86,18 +74,12 @@ export function Hero() {
               ].map((stat) => (
                 <div key={stat.label} className="flex flex-col">
                   <span
-                    className="text-(--color-text-primary)"
-                    style={{
-                      fontSize: "1.375rem",
-                      fontWeight: 700,
-                      lineHeight: 1.2,
-                    }}
+                    className="text-(--color-text-primary) text-[length:var(--text-style-h3-font-size)] font-(--text-style-h3-font-weight) leading-(--text-style-h3-line-height)"
                   >
                     {stat.label}
                   </span>
                   <span
-                    className="text-(--color-text-muted)"
-                    style={{ fontSize: "0.8125rem" }}
+                    className="text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-body-font-weight) leading-(--text-style-caption-line-height)"
                   >
                     {stat.sub}
                   </span>
@@ -108,10 +90,7 @@ export function Hero() {
 
           {/* Portrait placeholder */}
           <div className="hidden lg:flex flex-col items-center gap-4">
-            <div
-              className="relative rounded-2xl overflow-hidden bg-(--color-action-secondary) border border-(--color-border-default) shadow-[0_8px_32px_rgba(0,0,0,0.08)]"
-              style={{ width: 300, height: 360 }}
-            >
+            <div className="relative h-[360px] w-[300px] overflow-hidden rounded-(--card-radius) border border-(--card-border) bg-(--card-background) shadow-(--card-shadow)">
               <img
                 src={`${import.meta.env.BASE_URL}/ayanna-portrait.jpg`}
                 alt="Ayanna Humes"
@@ -122,8 +101,7 @@ export function Hero() {
               <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-(--color-action-secondary) to-transparent" />
             </div>
             <p
-              className="text-(--color-text-muted)"
-              style={{ fontSize: "0.75rem" }}
+              className="text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-body-font-weight) leading-(--text-style-caption-line-height)"
             >
               Ayanna Humes · Senior UX Engineer
             </p>
@@ -133,14 +111,7 @@ export function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-(--color-text-muted)">
-        <div
-          className="w-px bg-(--color-border-default)"
-          style={{
-            height: 40,
-            background:
-              "linear-gradient(to bottom, transparent, rgba(0,0,0,0.15))",
-          }}
-        />
+        <div className="h-10 w-px bg-gradient-to-b from-transparent to-(--color-border-default)" />
       </div>
     </section>
   );
