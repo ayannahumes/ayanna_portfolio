@@ -1,15 +1,9 @@
-{
-  /* MARKER-MAKE-KIT-INVOKED */
-}
-{
-  /* MARKER-MAKE-KIT-DISCOVERY-READ */
-}
-import { Nav } from "./components/Nav";
-import { Hero } from "./components/Hero";
-import { About } from "./components/About";
-import { CaseStudies } from "./components/CaseStudies";
-import { Process } from "./components/Process";
-import { Contact } from "./components/Contact";
+import { Nav } from "./portfolio-sections/Nav";
+import { Hero } from "./portfolio-sections/Hero";
+import { About } from "./portfolio-sections/About";
+import { CaseStudies } from "./portfolio-sections/CaseStudies";
+import { Process } from "./portfolio-sections/Process";
+import { Contact } from "./portfolio-sections/Contact";
 
 export default function App() {
   return (
