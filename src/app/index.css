@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@import "../design-system/runtime/fonts.css";
+@import "../design-system/tokens/generated/foundation-theme.css";
+@import "../design-system/tokens/generated/active-theme.css";
+@import "../design-system/tokens/generated/component-theme.css";
+@import "../design-system/runtime/tailwind-theme.css";
+@import "../design-system/runtime/base.css";
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
