@@ -4,10 +4,11 @@ import { About } from "./portfolio-sections/About";
 import { CaseStudies } from "./portfolio-sections/CaseStudies";
 import { Process } from "./portfolio-sections/Process";
 import { Contact } from "./portfolio-sections/Contact";
+import { DesignSystemCaseStudy } from "./features/case-studies/design-system/DesignSystemCaseStudy";
 
-export default function App() {
+function PortfolioHome() {
   return (
-    <div className="min-h-screen bg-(--color-background-page) text-(--color-text-primary)">
+    <>
       <Nav />
       <main>
         <Hero />
@@ -16,6 +17,30 @@ export default function App() {
         <Process />
         <Contact />
       </main>
+    </>
+  );
+}
+
+function getCurrentRoute() {
+  const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+  const pathname = window.location.pathname;
+  const route = basePath && pathname.startsWith(basePath)
+    ? pathname.slice(basePath.length) || "/"
+    : pathname;
+
+  return route.length > 1 ? route.replace(/\/$/, "") : route;
+}
+
+export default function App() {
+  const route = getCurrentRoute();
+
+  return (
+    <div className="min-h-screen bg-(--color-background-page) text-(--color-text-primary)">
+      {route === "/case-studies/design-system" || route === "/design-system" ? (
+        <DesignSystemCaseStudy />
+      ) : (
+        <PortfolioHome />
+      )}
     </div>
   );
 }
