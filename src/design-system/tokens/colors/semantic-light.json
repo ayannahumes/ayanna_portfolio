@@ -1,0 +1,43 @@
+{
+  "color": {
+    "semantic": {
+      "light": {
+        "background": {
+          "page": { "value": "{color.primitive.neutral.0}", "type": "color" },
+          "surface": { "value": "{color.primitive.neutral.50}", "type": "color" },
+          "elevated": { "value": "{color.primitive.neutral.0}", "type": "color" },
+          "muted": { "value": "{color.primitive.neutral.100}", "type": "color" }
+        },
+        "text": {
+          "primary": { "value": "{color.primitive.neutral.900}", "type": "color" },
+          "secondary": { "value": "{color.primitive.neutral.700}", "type": "color" },
+          "muted": { "value": "{color.primitive.neutral.500}", "type": "color" },
+          "inverse": { "value": "{color.primitive.neutral.0}", "type": "color" }
+        },
+        "border": {
+          "default": { "value": "{color.primitive.neutral.200}", "type": "color" },
+          "strong": { "value": "{color.primitive.neutral.300}", "type": "color" },
+          "focus": { "value": "{color.primitive.blue.500}", "type": "color" }
+        },
+        "action": {
+          "primary": { "value": "{color.primitive.blue.700}", "type": "color" },
+          "primaryHover": { "value": "{color.primitive.blue.500}", "type": "color" },
+          "secondary": { "value": "{color.primitive.neutral.100}", "type": "color" },
+          "secondaryHover": { "value": "{color.primitive.neutral.200}", "type": "color" }
+        },
+        "feedback": {
+          "success": { "value": "{color.primitive.green.500}", "type": "color" },
+          "successSubtle": { "value": "{color.primitive.green.100}", "type": "color" },
+          "warning": { "value": "{color.primitive.amber.500}", "type": "color" },
+          "warningSubtle": { "value": "{color.primitive.amber.100}", "type": "color" },
+          "error": { "value": "{color.primitive.red.500}", "type": "color" },
+          "errorSubtle": { "value": "{color.primitive.red.100}", "type": "color" }
+        },
+        "link": {
+          "default": { "value": "{color.primitive.blue.700}", "type": "color" },
+          "hover": { "value": "{color.primitive.blue.500}", "type": "color" }
+        }
+      }
+    }
+  }
+}

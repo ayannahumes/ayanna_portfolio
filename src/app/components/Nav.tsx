@@ -87,7 +87,8 @@ export function Nav() {
         >
           Get in touch
         </Button>
-
+        
+        {/* Theme toggle */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
 
