@@ -1,7 +1,20 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Settings } from "lucide-react";
 import { Button } from "./ui/button";
 import { cn } from "./ui/utils";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+} from "./ui/dropdown-menu";
+import {
+  setActiveTheme,
+  type ThemeName,
+  type ColorMode,
+} from "@/design-system/theme";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -13,6 +26,12 @@ const navLinks = [
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [theme, setTheme] = useState<ThemeName>("default");
+  const [mode, setMode] = useState<ColorMode>("light");
+
+  useEffect(() => {
+    setActiveTheme(theme, mode);
+  }, [theme, mode]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -68,6 +87,52 @@ export function Nav() {
         >
           Get in touch
         </Button>
+
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+
+            <button aria-label="Open settings">
+
+              <Settings size={18} />
+
+            </button>
+
+          </DropdownMenuTrigger>
+
+          <DropdownMenuContent align="end">
+
+            <DropdownMenuLabel>Theme</DropdownMenuLabel>
+
+            <DropdownMenuItem onClick={() => setTheme("default")}>
+
+              Default
+
+            </DropdownMenuItem>
+
+            <DropdownMenuItem onClick={() => setTheme("brown")}>
+
+              Brown
+
+            </DropdownMenuItem>
+
+            <DropdownMenuSeparator />
+
+            <DropdownMenuLabel>Mode</DropdownMenuLabel>
+
+            <DropdownMenuItem onClick={() => setMode("light")}>
+
+              Light
+
+            </DropdownMenuItem>
+
+            <DropdownMenuItem onClick={() => setMode("dark")}>
+
+              Dark
+
+            </DropdownMenuItem>
+
+          </DropdownMenuContent>
+        </DropdownMenu>
 
         {/* Mobile toggle */}
         <button
