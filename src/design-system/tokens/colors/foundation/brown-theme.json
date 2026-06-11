@@ -1,0 +1,50 @@
+{
+  "theme": {
+    "brown": {
+      "light": {
+        "action": {
+          "primary": {
+            "value": "{color.primitive.brown.700}",
+            "type": "color"
+          },
+          "primaryHover": {
+            "value": "{color.primitive.brown.500}",
+            "type": "color"
+          }
+        },
+        "link": {
+          "default": {
+            "value": "{color.primitive.brown.700}",
+            "type": "color"
+          },
+          "hover": {
+            "value": "{color.primitive.brown.500}",
+            "type": "color"
+          }
+        }
+      },
+      "dark": {
+        "action": {
+          "primary": {
+            "value": "{color.primitive.brown.500}",
+            "type": "color"
+          },
+          "primaryHover": {
+            "value": "{color.primitive.brown.300}",
+            "type": "color"
+          }
+        },
+        "link": {
+          "default": {
+            "value": "{color.primitive.brown.300}",
+            "type": "color"
+          },
+          "hover": {
+            "value": "{color.primitive.brown.100}",
+            "type": "color"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "component": {
+    "button": {
+      "variant": {
+        "default": {
+          "background": { "value": "{theme.active.action.primary}", "type": "color" },
+          "backgroundHover": { "value": "{theme.active.action.primaryHover}", "type": "color" },
+          "text": { "value": "{theme.active.text.inverse}", "type": "color" },
+          "border": { "value": "{theme.active.action.primary}", "type": "color" }
+        },
+        "secondary": {
+          "background": { "value": "{theme.active.action.secondary}", "type": "color" },
+          "backgroundHover": { "value": "{theme.active.action.secondaryHover}", "type": "color" },
+          "text": { "value": "{theme.active.text.primary}", "type": "color" },
+          "border": { "value": "{theme.active.border.default}", "type": "color" }
+        },
+        "outline": {
+          "background": { "value": "transparent", "type": "color" },
+          "backgroundHover": { "value": "{theme.active.background.muted}", "type": "color" },
+          "text": { "value": "{theme.active.text.primary}", "type": "color" },
+          "border": { "value": "{theme.active.border.default}", "type": "color" }
+        },
+        "ghost": {
+          "background": { "value": "transparent", "type": "color" },
+          "backgroundHover": { "value": "{theme.active.background.muted}", "type": "color" },
+          "text": { "value": "{theme.active.text.primary}", "type": "color" }
+        },
+        "link": {
+          "background": { "value": "transparent", "type": "color" },
+          "text": { "value": "{theme.active.link.default}", "type": "color" },
+          "textHover": { "value": "{theme.active.link.hover}", "type": "color" }
+        },
+        "destructive": {
+          "background": { "value": "{theme.active.feedback.error}", "type": "color" },
+          "backgroundHover": { "value": "{theme.active.feedback.error}", "type": "color" },
+          "text": { "value": "{theme.active.text.inverse}", "type": "color" },
+          "border": { "value": "{theme.active.feedback.error}", "type": "color" }
+        }
+      },
+      "size": {
+        "sm": {
+          "height": { "value": "{size.control.sm}", "type": "dimension" },
+          "paddingX": { "value": "{space.3}", "type": "dimension" }
+        },
+        "md": {
+          "height": { "value": "{size.control.md}", "type": "dimension" },
+          "paddingX": { "value": "{space.4}", "type": "dimension" }
+        },
+        "lg": {
+          "height": { "value": "{size.control.lg}", "type": "dimension" },
+          "paddingX": { "value": "{space.5}", "type": "dimension" }
+        }
+      }
+    },
+    "badge": {
+      "variant": {
+        "default": {
+          "background": { "value": "{theme.active.action.primary}", "type": "color" },
+          "text": { "value": "{theme.active.text.inverse}", "type": "color" }
+        },
+        "secondary": {
+          "background": { "value": "{theme.active.background.muted}", "type": "color" },
+          "text": { "value": "{theme.active.text.secondary}", "type": "color" }
+        },
+        "outline": {
+          "background": { "value": "transparent", "type": "color" },
+          "text": { "value": "{theme.active.text.primary}", "type": "color" },
+          "border": { "value": "{theme.active.border.default}", "type": "color" }
+        },
+        "destructive": {
+          "background": { "value": "{theme.active.feedback.errorSubtle}", "type": "color" },
+          "text": { "value": "{theme.active.feedback.error}", "type": "color" }
+        }
+      }
+    },
+    "card": {
+      "root": {
+        "background": { "value": "{theme.active.background.elevated}", "type": "color" },
+        "text": { "value": "{theme.active.text.primary}", "type": "color" },
+        "border": { "value": "{theme.active.border.default}", "type": "color" },
+        "radius": { "value": "{radius.lg}", "type": "dimension" },
+        "shadow": { "value": "{elevation.card}", "type": "shadow" }
+      },
+      "header": {
+        "spacing": { "value": "{space.6}", "type": "dimension" }
+      },
+      "title": {
+        "text": { "value": "{theme.active.text.primary}", "type": "color" }
+      },
+      "description": {
+        "text": { "value": "{theme.active.text.secondary}", "type": "color" }
+      },
+      "content": {
+        "text": { "value": "{theme.active.text.primary}", "type": "color" },
+        "spacing": { "value": "{space.6}", "type": "dimension" }
+      }
+    }
+  }
+}
