@@ -39,17 +39,25 @@
       },
       "size": {
         "sm": {
-          "height": { "value": "{size.control.sm}", "type": "dimension" },
-          "paddingX": { "value": "{space.3}", "type": "dimension" }
+          "height": { "value": "{size.md}", "type": "dimension" },
+          "paddingX": { "value": "{space.sm}", "type": "dimension" }
         },
         "md": {
-          "height": { "value": "{size.control.md}", "type": "dimension" },
-          "paddingX": { "value": "{space.4}", "type": "dimension" }
+          "height": { "value": "{size.lg}", "type": "dimension" },
+          "paddingX": { "value": "{space.md}", "type": "dimension" }
         },
         "lg": {
-          "height": { "value": "{size.control.lg}", "type": "dimension" },
-          "paddingX": { "value": "{space.5}", "type": "dimension" }
+          "height": { "value": "{size.xl}", "type": "dimension" },
+          "paddingX": { "value": "{space.lg}", "type": "dimension" }
         }
+      },
+      "shape": {
+        "radius": { "value": "{radius.md}", "type": "dimension" },
+        "borderWidth": { "value": "{borderWidth.hairline}", "type": "dimension" }
+      },
+      "motion": {
+        "duration": { "value": "{motion.duration.normal}", "type": "duration" },
+        "easing": { "value": "{motion.easing.standard}", "type": "cubicBezier" }
       }
     },
     "badge": {
@@ -71,6 +79,14 @@
           "background": { "value": "{theme.active.feedback.errorSubtle}", "type": "color" },
           "text": { "value": "{theme.active.feedback.error}", "type": "color" }
         }
+      },
+      "shape": {
+        "radius": { "value": "{radius.sm}", "type": "dimension" },
+        "borderWidth": { "value": "{borderWidth.hairline}", "type": "dimension" }
+      },
+      "spacing": {
+        "paddingX": { "value": "{space.sm}", "type": "dimension" },
+        "paddingY": { "value": "{space.xs}", "type": "dimension" }
       }
     },
     "card": {
@@ -79,10 +95,11 @@
         "text": { "value": "{theme.active.text.primary}", "type": "color" },
         "border": { "value": "{theme.active.border.default}", "type": "color" },
         "radius": { "value": "{radius.lg}", "type": "dimension" },
-        "shadow": { "value": "{elevation.card}", "type": "shadow" }
+        "borderWidth": { "value": "{borderWidth.hairline}", "type": "dimension" },
+        "shadow": { "value": "{elevation.sm}", "type": "shadow" }
       },
       "header": {
-        "spacing": { "value": "{space.6}", "type": "dimension" }
+        "spacing": { "value": "{space.lg}", "type": "dimension" }
       },
       "title": {
         "text": { "value": "{theme.active.text.primary}", "type": "color" }
@@ -92,7 +109,7 @@
       },
       "content": {
         "text": { "value": "{theme.active.text.primary}", "type": "color" },
-        "spacing": { "value": "{space.6}", "type": "dimension" }
+        "spacing": { "value": "{space.lg}", "type": "dimension" }
       }
     }
   }

@@ -1,0 +1,48 @@
+{
+  "layout": {
+    "container": {
+      "sm": {
+        "value": "640px",
+        "type": "dimension"
+      },
+      "md": {
+        "value": "768px",
+        "type": "dimension"
+      },
+      "lg": {
+        "value": "1024px",
+        "type": "dimension"
+      },
+      "xl": {
+        "value": "1280px",
+        "type": "dimension"
+      },
+      "2xl": {
+        "value": "1440px",
+        "type": "dimension"
+      }
+    },
+
+    "content": {
+      "narrow": {
+        "value": "640px",
+        "type": "dimension"
+      },
+      "default": {
+        "value": "768px",
+        "type": "dimension"
+      },
+      "wide": {
+        "value": "1024px",
+        "type": "dimension"
+      }
+    },
+
+    "grid": {
+      "columns": {
+        "value": 12,
+        "type": "number"
+      }
+    }
+  }
+}

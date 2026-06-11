@@ -1,0 +1,16 @@
+{
+  "radius": {
+    "sm": {
+      "value": "{dimension.primitive.4}",
+      "type": "dimension"
+    },
+    "md": {
+      "value": "{dimension.primitive.8}",
+      "type": "dimension"
+    },
+    "lg": {
+      "value": "{dimension.primitive.12}",
+      "type": "dimension"
+    }
+  }
+}
