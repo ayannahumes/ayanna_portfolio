@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Menu, X, Settings } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Icon } from "@/design-system/icons";
 import { Button } from "./ui/button";
 import { cn } from "./ui/utils";
 import {
@@ -94,7 +94,7 @@ export function Nav() {
 
             <button aria-label="Open settings">
 
-              <Settings size={18} />
+              <Icon name="settings" size="md" />
 
             </button>
 
@@ -141,7 +141,11 @@ export function Nav() {
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Toggle menu"
         >
-          {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+          {mobileOpen ? (
+            <Icon name="close" size="md" />
+          ) : (
+            <Icon name="menu" size="md" />
+          )}
         </button>
       </nav>
 

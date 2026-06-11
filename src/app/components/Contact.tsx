@@ -1,8 +1,14 @@
-import { Github, Linkedin, FileText, Mail, ArrowUpRight } from "lucide-react";
+import { Icon, type IconName } from "@/design-system/icons";
 
-const links = [
+const links: {
+  icon: IconName;
+  label: string;
+  handle: string;
+  description: string;
+  href: string;
+}[] = [
   {
-    icon: Github,
+    icon: "github",
     label: "GitHub",
     handle: "@ayannahumes",
     description:
@@ -10,7 +16,7 @@ const links = [
     href: "https://github.com/ayannahumes",
   },
   {
-    icon: Linkedin,
+    icon: "linkedin",
     label: "LinkedIn",
     handle: "Ayanna Humes",
     description:
@@ -18,14 +24,14 @@ const links = [
     href: "https://www.linkedin.com/in/ayannahumes/",
   },
   {
-    icon: FileText,
+    icon: "file-text",
     label: "Resume",
     handle: "ayanna-humes-resume.pdf",
     description: "Full work history, skills, and engineering background.",
     href: `${import.meta.env.BASE_URL}/ayanna-humes-resume.pdf`,
   },
   {
-    icon: Mail,
+    icon: "mail",
     label: "Email",
     handle: "humes.ayanna@gmail.com",
     description: "Best for role inquiries, collaboration, and project work.",
@@ -74,9 +80,7 @@ export function Contact() {
 
         {/* Link grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl">
-          {links.map((link) => {
-            const Icon = link.icon;
-            return (
+          {links.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
@@ -89,7 +93,7 @@ export function Contact() {
                 className="group flex items-start gap-5 p-6 rounded-xl border border-(--color-border-default) hover:border-(--color-text-primary)/20 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-all duration-200 bg-white"
               >
                 <div className="size-10 rounded-lg bg-(--color-action-secondary) border border-(--color-border-default) flex items-center justify-center shrink-0 group-hover:bg-(--color-text-primary) group-hover:border-(--color-text-primary) group-hover:text-white transition-all duration-200">
-                  <Icon size={18} strokeWidth={1.75} />
+                  <Icon name={link.icon} size="md" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between gap-2 mb-1">
@@ -99,8 +103,9 @@ export function Contact() {
                     >
                       {link.label}
                     </p>
-                    <ArrowUpRight
-                      size={14}
+                    <Icon
+                      name="arrow-up-right"
+                      size="sm"
                       className="text-(--color-text-muted) group-hover:text-(--color-text-primary) transition-colors shrink-0"
                     />
                   </div>
@@ -118,8 +123,7 @@ export function Contact() {
                   </p>
                 </div>
               </a>
-            );
-          })}
+          ))}
         </div>
 
         {/* Footer rule */}

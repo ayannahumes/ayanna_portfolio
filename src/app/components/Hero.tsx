@@ -1,4 +1,4 @@
-import { ArrowRight, Download } from "lucide-react";
+import { Icon } from "@/design-system/icons";
 import { Button } from "./ui/button";
 
 export function Hero() {
@@ -60,7 +60,7 @@ export function Hero() {
                 className="gap-2"
               >
                 View Case Studies
-                <ArrowRight size={16} />
+                <Icon name="arrow-right" size="sm" />
               </Button>
               <Button
                 asChild
@@ -70,7 +70,7 @@ export function Hero() {
                 onClick={() => window.open(`${import.meta.env.BASE_URL}/ayanna-humes-resume.pdf`, "_blank")}
               >
                 <a href={`${import.meta.env.BASE_URL}/ayanna-humes-resume.pdf`} download>
-                  <Download size={16} />
+                  <Icon name="download" size="sm" />
                    Download Resume
                 </a>
               </Button>

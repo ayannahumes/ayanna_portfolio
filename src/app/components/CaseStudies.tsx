@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { Icon } from "@/design-system/icons";
 import { Badge } from "./ui/badge";
 import {
   Card,
@@ -169,7 +169,7 @@ export function CaseStudies() {
                     </CardTitle>
                   </div>
                   <div className="size-8 rounded-full border border-(--color-border-default) flex items-center justify-center text-(--color-text-muted) group-hover:bg-(--color-text-primary) group-hover:text-white group-hover:border-(--color-text-primary) transition-all shrink-0 mt-0.5">
-                    <ArrowUpRight size={14} />
+                    <Icon name="arrow-up-right" size="sm" />
                   </div>
                 </div>
               </CardHeader>

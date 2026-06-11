@@ -1,39 +1,43 @@
-import { Search, Cpu, Pen, Play, Rocket, BarChart2 } from "lucide-react";
+import { Icon, type IconName } from "@/design-system/icons";
 import { cn } from "./ui/utils";
 
-const steps = [
+const steps: {
+  icon: IconName;
+  label: string;
+  description: string;
+}[] = [
   {
-    icon: Search,
+    icon: "search",
     label: "Research",
     description:
       "User interviews, stakeholder mapping, competitive analysis, and heuristic evaluation to define the problem space.",
   },
   {
-    icon: Cpu,
+    icon: "cpu",
     label: "Systems Thinking",
     description:
       "Model the system: entities, relationships, states, and flows. Define tokens and primitives before components.",
   },
   {
-    icon: Pen,
+    icon: "pen",
     label: "Design",
     description:
       "Figma-native prototyping using tokens and auto-layout. Iterate on hierarchy, density, and interaction models.",
   },
   {
-    icon: Play,
+    icon: "play",
     label: "Prototype",
     description:
       "React + TypeScript proof-of-concept. Validate interaction fidelity, edge cases, and accessibility early.",
   },
   {
-    icon: Rocket,
+    icon: "rocket",
     label: "Production",
     description:
       "Ship accessible, performant, testable components. Storybook docs, semantic HTML, and full keyboard support.",
   },
   {
-    icon: BarChart2,
+    icon: "bar-chart-2",
     label: "Measurement",
     description:
       "Track adoption metrics, accessibility audits, and developer satisfaction. Feed learnings back to Research.",
@@ -93,7 +97,6 @@ export function Process() {
 
             <div className="grid grid-cols-6 gap-4">
               {steps.map((step, index) => {
-                const Icon = step.icon;
                 return (
                   <div
                     key={step.label}
@@ -103,8 +106,8 @@ export function Process() {
                     <div className="relative z-10 mb-6">
                       <div className="size-[4.5rem] rounded-2xl bg-white border border-(--color-border-default) flex items-center justify-center shadow-[0_1px_4px_rgba(0,0,0,0.06)] group-hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)] group-hover:border-(--color-text-primary)/20 transition-all duration-200">
                         <Icon
-                          size={22}
-                          strokeWidth={1.75}
+                          name={step.icon}
+                          size="md"
                           className="text-(--color-text-primary)"
                         />
                       </div>
@@ -143,7 +146,6 @@ export function Process() {
         {/* Mobile: vertical timeline */}
         <div className="lg:hidden space-y-0">
           {steps.map((step, index) => {
-            const Icon = step.icon;
             const isLast = index === steps.length - 1;
             return (
               <div key={step.label} className="flex gap-5">
@@ -151,8 +153,8 @@ export function Process() {
                 <div className="flex flex-col items-center">
                   <div className="size-11 rounded-xl bg-white border border-(--color-border-default) flex items-center justify-center shadow-[0_1px_4px_rgba(0,0,0,0.06)] shrink-0 relative">
                     <Icon
-                      size={18}
-                      strokeWidth={1.75}
+                      name={step.icon}
+                      size="md"
                       className="text-(--color-text-primary)"
                     />
                     <div
