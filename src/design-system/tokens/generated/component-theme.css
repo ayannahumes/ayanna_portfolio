@@ -24,6 +24,16 @@
   --button-destructive-background-hover: var(--color-feedback-error);
   --button-destructive-text: var(--color-text-inverse);
   --button-destructive-border: var(--color-feedback-error);
+  --button-size-sm-height: var(--size-md);
+  --button-size-sm-padding-x: var(--space-sm);
+  --button-size-md-height: var(--size-lg);
+  --button-size-md-padding-x: var(--space-md);
+  --button-size-lg-height: var(--size-xl);
+  --button-size-lg-padding-x: var(--space-lg);
+  --button-shape-radius: var(--radius-md);
+  --button-shape-border-width: var(--border-width-hairline);
+  --button-motion-duration: var(--motion-duration-normal);
+  --button-motion-easing: var(--motion-easing-standard);
   --badge-default-background: var(--color-action-primary);
   --badge-default-text: var(--color-text-inverse);
   --badge-secondary-background: var(--color-background-muted);
@@ -33,10 +43,19 @@
   --badge-outline-border: var(--color-border-default);
   --badge-destructive-background: var(--color-feedback-error-subtle);
   --badge-destructive-text: var(--color-feedback-error);
+  --badge-shape-radius: var(--radius-sm);
+  --badge-shape-border-width: var(--border-width-hairline);
+  --badge-spacing-padding-x: var(--space-sm);
+  --badge-spacing-padding-y: var(--space-xs);
   --card-background: var(--color-background-elevated);
   --card-text: var(--color-text-primary);
   --card-border: var(--color-border-default);
+  --card-radius: var(--radius-lg);
+  --card-border-width: var(--border-width-hairline);
+  --card-shadow: var(--elevation-sm);
+  --card-header-spacing: var(--space-lg);
   --card-title-text: var(--color-text-primary);
   --card-description-text: var(--color-text-secondary);
   --card-content-text: var(--color-text-primary);
+  --card-content-spacing: var(--space-lg);
 }

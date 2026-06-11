@@ -50,7 +50,7 @@ function InputOTPSlot({
       data-slot="input-otp-slot"
       data-active={isActive}
       className={cn(
-        "data-[active=true]:border-(--color-border-focus) data-[active=true]:ring-(--color-border-focus)/50 data-[active=true]:aria-invalid:ring-(--color-feedback-error)/20 dark:data-[active=true]:aria-invalid:ring-(--color-feedback-error)/40 aria-invalid:border-(--color-feedback-error) data-[active=true]:aria-invalid:border-(--color-feedback-error) dark:bg-(--color-background-muted)/30 border-(--color-border-default) relative flex h-9 w-9 items-center justify-center border-y border-r text-sm bg-(--color-background-muted) transition-all outline-none first:rounded-l-md first:border-l last:rounded-r-md data-[active=true]:z-10 data-[active=true]:ring-[3px]",
+        "data-[active=true]:border-(--color-border-focus) data-[active=true]:ring-(--color-border-focus)/50 data-[active=true]:aria-invalid:ring-(--color-feedback-error)/20 aria-invalid:border-(--color-feedback-error) data-[active=true]:aria-invalid:border-(--color-feedback-error) border-(--color-border-default) relative flex h-9 w-9 items-center justify-center border-y border-r text-sm bg-(--color-background-muted) transition-all outline-none first:rounded-l-md first:border-l last:rounded-r-md data-[active=true]:z-10 data-[active=true]:ring-[3px]",
         className,
       )}
       {...props}

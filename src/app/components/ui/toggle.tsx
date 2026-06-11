@@ -7,7 +7,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
 
 const toggleVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium hover:bg-(--color-background-muted) hover:text-(--color-text-muted) disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-(--color-action-secondary-hover) data-[state=on]:text-(--color-text-primary) [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 focus-visible:border-(--color-border-focus) focus-visible:ring-(--color-border-focus)/50 focus-visible:ring-[3px] outline-none transition-[color,box-shadow] aria-invalid:ring-(--color-feedback-error)/20 dark:aria-invalid:ring-(--color-feedback-error)/40 aria-invalid:border-(--color-feedback-error) whitespace-nowrap",
+  "inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium hover:bg-(--color-background-muted) hover:text-(--color-text-muted) disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-(--color-action-secondary-hover) data-[state=on]:text-(--color-text-primary) [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 focus-visible:border-(--color-border-focus) focus-visible:ring-(--color-border-focus)/50 focus-visible:ring-[3px] outline-none transition-[color,box-shadow] aria-invalid:ring-(--color-feedback-error)/20 aria-invalid:border-(--color-feedback-error) whitespace-nowrap",
   {
     variants: {
       variant: {

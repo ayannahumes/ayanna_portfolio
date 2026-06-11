@@ -42,7 +42,7 @@ function TabsTrigger({
     <TabsPrimitive.Trigger
       data-slot="tabs-trigger"
       className={cn(
-        "data-[state=active]:bg-(--card-background) dark:data-[state=active]:text-(--color-text-primary) focus-visible:border-(--color-border-focus) focus-visible:ring-(--color-border-focus)/50 focus-visible:outline-(--color-border-focus) dark:data-[state=active]:border-(--color-border-default) dark:data-[state=active]:bg-(--color-background-muted)/30 text-(--color-text-primary) dark:text-(--color-text-muted) inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-xl border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "data-[state=active]:bg-(--card-background) focus-visible:border-(--color-border-focus) focus-visible:ring-(--color-border-focus)/50 focus-visible:outline-(--color-border-focus) text-(--color-text-primary) inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-xl border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className,
       )}
       {...props}

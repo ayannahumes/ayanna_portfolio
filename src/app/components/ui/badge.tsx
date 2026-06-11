@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
 
 const badgeVariants = cva(
-  "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-(--color-border-focus) focus-visible:ring-(--color-border-focus)/50 focus-visible:ring-[3px] aria-invalid:ring-(--color-feedback-error)/20 dark:aria-invalid:ring-(--color-feedback-error)/40 aria-invalid:border-(--color-feedback-error) transition-[color,box-shadow] overflow-hidden",
+  "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-(--color-border-focus) focus-visible:ring-(--color-border-focus)/50 focus-visible:ring-[3px] aria-invalid:ring-(--color-feedback-error)/20 aria-invalid:border-(--color-feedback-error) transition-[color,box-shadow] overflow-hidden",
   {
     variants: {
       variant: {
@@ -14,7 +14,7 @@ const badgeVariants = cva(
         secondary:
           "border-transparent bg-(--color-action-secondary) text-(--color-text-primary) [a&]:hover:bg-(--color-action-secondary)/90",
         destructive:
-          "border-transparent bg-(--color-feedback-error) text-white [a&]:hover:bg-(--color-feedback-error)/90 focus-visible:ring-(--color-feedback-error)/20 dark:focus-visible:ring-(--color-feedback-error)/40 dark:bg-(--color-feedback-error)/60",
+          "border-transparent bg-(--color-feedback-error) text-white [a&]:hover:bg-(--color-feedback-error)/90 focus-visible:ring-(--color-feedback-error)/20",
         outline:
           "text-(--color-text-primary) [a&]:hover:bg-(--color-action-secondary-hover) [a&]:hover:text-(--color-text-primary)",
       },

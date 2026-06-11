@@ -5,19 +5,19 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "./utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-(--color-border-focus) focus-visible:ring-(--color-border-focus)/50 focus-visible:ring-[3px] aria-invalid:ring-(--color-feedback-error)/20 dark:aria-invalid:ring-(--color-feedback-error)/40 aria-invalid:border-(--color-feedback-error)",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-(--color-border-focus) focus-visible:ring-(--color-border-focus)/50 focus-visible:ring-[3px] aria-invalid:ring-(--color-feedback-error)/20 aria-invalid:border-(--color-feedback-error)",
   {
     variants: {
       variant: {
         default: "bg-(--color-action-primary) text-(--color-text-inverse) hover:bg-(--color-action-primary)/90",
         destructive:
-          "bg-(--color-feedback-error) text-white hover:bg-(--color-feedback-error)/90 focus-visible:ring-(--color-feedback-error)/20 dark:focus-visible:ring-(--color-feedback-error)/40 dark:bg-(--color-feedback-error)/60",
+          "bg-(--color-feedback-error) text-white hover:bg-(--color-feedback-error)/90 focus-visible:ring-(--color-feedback-error)/20",
         outline:
-          "border bg-(--color-background-page) text-(--color-text-primary) hover:bg-(--color-action-secondary-hover) hover:text-(--color-text-primary) dark:bg-(--color-background-muted)/30 dark:border-(--color-border-default) dark:hover:bg-(--color-background-muted)/50",
+          "border bg-(--color-background-page) text-(--color-text-primary) hover:bg-(--color-action-secondary-hover) hover:text-(--color-text-primary)",
         secondary:
           "bg-(--color-action-secondary) text-(--color-text-primary) hover:bg-(--color-action-secondary)/80",
         ghost:
-          "hover:bg-(--color-action-secondary-hover) hover:text-(--color-text-primary) dark:hover:bg-(--color-action-secondary-hover)/50",
+          "hover:bg-(--color-action-secondary-hover) hover:text-(--color-text-primary)",
         link: "text-(--color-action-primary) underline-offset-4 hover:underline",
       },
       size: {
