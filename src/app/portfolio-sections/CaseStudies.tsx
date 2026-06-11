@@ -9,6 +9,7 @@ import {
 } from "@/design-system/components/card";
 import { designSystemCaseStudyLinks } from "@/app/features/case-studies/design-system/designSystemCaseStudy.data";
 import { componentDeepDiveLinks } from "@/app/features/case-studies/component-deep-dive/componentDeepDive.data";
+import { generativeUiLinks } from "@/app/features/case-studies/generative-ui/generativeUi.data";
 
 interface CaseStudy {
   id: string;
@@ -97,6 +98,10 @@ const caseStudies: CaseStudy[] = [
 
 export function CaseStudies() {
   const caseStudyLinks: Partial<Record<string, { href: string; label: string }>> = {
+    doordash: {
+      href: generativeUiLinks.caseStudy,
+      label: "Read the Generative UI for Platform Debugging case study",
+    },
     "portfolio-ds": {
       href: designSystemCaseStudyLinks.caseStudy,
       label: "Read the Portfolio Design System case study",

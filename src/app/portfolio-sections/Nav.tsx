@@ -10,11 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
 } from "@/design-system/components/dropdown-menu";
-import {
-  setActiveTheme,
-  type ThemeName,
-  type ColorMode,
-} from "@/design-system/theme";
+import type { ColorMode, ThemeName } from "@/design-system/theme";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -23,15 +19,19 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-export function Nav() {
+export function Nav({
+  theme,
+  mode,
+  setTheme,
+  setMode,
+}: {
+  theme: ThemeName;
+  mode: ColorMode;
+  setTheme: (theme: ThemeName) => void;
+  setMode: (mode: ColorMode) => void;
+}) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [theme, setTheme] = useState<ThemeName>("default");
-  const [mode, setMode] = useState<ColorMode>("light");
-
-  useEffect(() => {
-    setActiveTheme(theme, mode);
-  }, [theme, mode]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -102,19 +102,19 @@ export function Nav() {
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Theme</DropdownMenuLabel>
 
-            <DropdownMenuItem onClick={() => setTheme("default")}>
+            <DropdownMenuItem disabled={theme === "default"} onClick={() => setTheme("default")}>
               Default
             </DropdownMenuItem>
 
-            <DropdownMenuItem onClick={() => setTheme("brown")}>Brown</DropdownMenuItem>
+            <DropdownMenuItem disabled={theme === "brown"} onClick={() => setTheme("brown")}>Brown</DropdownMenuItem>
 
             <DropdownMenuSeparator />
 
             <DropdownMenuLabel>Mode</DropdownMenuLabel>
 
-            <DropdownMenuItem onClick={() => setMode("light")}>Light</DropdownMenuItem>
+            <DropdownMenuItem disabled={mode === "light"} onClick={() => setMode("light")}>Light</DropdownMenuItem>
 
-            <DropdownMenuItem onClick={() => setMode("dark")}>Dark</DropdownMenuItem>
+            <DropdownMenuItem disabled={mode === "dark"} onClick={() => setMode("dark")}>Dark</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
 
