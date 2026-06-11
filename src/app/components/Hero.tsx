@@ -26,13 +26,13 @@ export function Hero() {
           {/* Text content */}
           <div className="max-w-3xl">
             {/* Available badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-white text-xs text-muted-foreground mb-8 shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-(--color-border-default) bg-white text-xs text-(--color-text-muted) mb-8 shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
               <span className="size-1.5 rounded-full bg-green-500 animate-pulse" />
               Available for new roles
             </div>
 
             <h1
-              className="text-foreground mb-6 tracking-tight"
+              className="text-(--color-text-primary) mb-6 tracking-tight"
               style={{
                 fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
                 fontWeight: 700,
@@ -45,7 +45,7 @@ export function Hero() {
             </h1>
 
             <p
-              className="text-muted-foreground mb-10 max-w-2xl"
+              className="text-(--color-text-muted) mb-10 max-w-2xl"
               style={{ fontSize: "1.125rem", lineHeight: 1.6 }}
             >
               Senior UX Engineer with a background in iOS engineering, design
@@ -77,7 +77,7 @@ export function Hero() {
             </div>
 
             {/* Social proof strip */}
-            <div className="flex flex-wrap items-center gap-6 mt-12 pt-10 border-t border-border">
+            <div className="flex flex-wrap items-center gap-6 mt-12 pt-10 border-t border-(--color-border-default)">
               {[
                 { label: "9+", sub: "Years Engineering" },
                 { label: "3", sub: "Design Systems Built" },
@@ -86,7 +86,7 @@ export function Hero() {
               ].map((stat) => (
                 <div key={stat.label} className="flex flex-col">
                   <span
-                    className="text-foreground"
+                    className="text-(--color-text-primary)"
                     style={{
                       fontSize: "1.375rem",
                       fontWeight: 700,
@@ -96,7 +96,7 @@ export function Hero() {
                     {stat.label}
                   </span>
                   <span
-                    className="text-muted-foreground"
+                    className="text-(--color-text-muted)"
                     style={{ fontSize: "0.8125rem" }}
                   >
                     {stat.sub}
@@ -109,7 +109,7 @@ export function Hero() {
           {/* Portrait placeholder */}
           <div className="hidden lg:flex flex-col items-center gap-4">
             <div
-              className="relative rounded-2xl overflow-hidden bg-secondary border border-border shadow-[0_8px_32px_rgba(0,0,0,0.08)]"
+              className="relative rounded-2xl overflow-hidden bg-(--color-action-secondary) border border-(--color-border-default) shadow-[0_8px_32px_rgba(0,0,0,0.08)]"
               style={{ width: 300, height: 360 }}
             >
               <img
@@ -119,10 +119,10 @@ export function Hero() {
               />
 
               {/* Decorative bottom band */}
-              <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-secondary to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-(--color-action-secondary) to-transparent" />
             </div>
             <p
-              className="text-muted-foreground"
+              className="text-(--color-text-muted)"
               style={{ fontSize: "0.75rem" }}
             >
               Ayanna Humes · Senior UX Engineer
@@ -132,9 +132,9 @@ export function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-(--color-text-muted)">
         <div
-          className="w-px bg-border"
+          className="w-px bg-(--color-border-default)"
           style={{
             height: 40,
             background:

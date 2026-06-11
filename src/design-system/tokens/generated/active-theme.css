@@ -20,8 +20,8 @@
   --theme-default-light-border-default: oklch(0.922 0 0);
   --theme-default-light-border-strong: oklch(0.708 0 0);
   --theme-default-light-border-focus: oklch(0.6 0.2 264);
-  --theme-default-light-action-primary: oklch(0.488 0.243 264.376);
-  --theme-default-light-action-primary-hover: oklch(0.6 0.2 264);
+  --theme-default-light-action-primary: oklch(0.145 0 0);
+  --theme-default-light-action-primary-hover: oklch(0.269 0 0);
   --theme-default-light-action-secondary: oklch(0.97 0 0);
   --theme-default-light-action-secondary-hover: oklch(0.922 0 0);
   --theme-default-light-feedback-success: oklch(0.696 0.17 162.48);
@@ -43,8 +43,8 @@
   --theme-default-dark-border-default: oklch(0.269 0 0);
   --theme-default-dark-border-strong: oklch(0.439 0 0);
   --theme-default-dark-border-focus: oklch(0.6 0.2 264);
-  --theme-default-dark-action-primary: oklch(0.6 0.2 264);
-  --theme-default-dark-action-primary-hover: oklch(0.78 0.12 264);
+  --theme-default-dark-action-primary: oklch(0.985 0 0);
+  --theme-default-dark-action-primary-hover: oklch(0.708 0 0);
   --theme-default-dark-action-secondary: oklch(0.269 0 0);
   --theme-default-dark-action-secondary-hover: oklch(0.439 0 0);
   --theme-default-dark-feedback-success: oklch(0.696 0.17 162.48);
@@ -95,8 +95,8 @@
   --color-semantic-dark-border-default: oklch(0.269 0 0);
   --color-semantic-dark-border-strong: oklch(0.439 0 0);
   --color-semantic-dark-border-focus: oklch(0.6 0.2 264);
-  --color-semantic-dark-action-primary: oklch(0.6 0.2 264);
-  --color-semantic-dark-action-primary-hover: oklch(0.78 0.12 264);
+  --color-semantic-dark-action-primary: oklch(0.985 0 0);
+  --color-semantic-dark-action-primary-hover: oklch(0.708 0 0);
   --color-semantic-dark-action-secondary: oklch(0.269 0 0);
   --color-semantic-dark-action-secondary-hover: oklch(0.439 0 0);
   --color-semantic-dark-feedback-success: oklch(0.696 0.17 162.48);
@@ -118,8 +118,8 @@
   --color-semantic-light-border-default: oklch(0.922 0 0);
   --color-semantic-light-border-strong: oklch(0.708 0 0);
   --color-semantic-light-border-focus: oklch(0.6 0.2 264);
-  --color-semantic-light-action-primary: oklch(0.488 0.243 264.376);
-  --color-semantic-light-action-primary-hover: oklch(0.6 0.2 264);
+  --color-semantic-light-action-primary: oklch(0.145 0 0);
+  --color-semantic-light-action-primary-hover: oklch(0.269 0 0);
   --color-semantic-light-action-secondary: oklch(0.97 0 0);
   --color-semantic-light-action-secondary-hover: oklch(0.922 0 0);
   --color-semantic-light-feedback-success: oklch(0.696 0.17 162.48);

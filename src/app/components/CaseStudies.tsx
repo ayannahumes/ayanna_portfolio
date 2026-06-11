@@ -95,12 +95,12 @@ const caseStudies: CaseStudy[] = [
 
 export function CaseStudies() {
   return (
-    <section id="case-studies" className="py-32 bg-secondary">
+    <section id="case-studies" className="py-32 bg-(--color-action-secondary)">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Section header */}
         <div className="mb-16">
           <p
-            className="text-muted-foreground mb-3"
+            className="text-(--color-text-muted) mb-3"
             style={{
               fontSize: "0.8125rem",
               fontWeight: 500,
@@ -112,7 +112,7 @@ export function CaseStudies() {
           </p>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <h2
-              className="text-foreground tracking-tight"
+              className="text-(--color-text-primary) tracking-tight"
               style={{
                 fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)",
                 fontWeight: 700,
@@ -123,7 +123,7 @@ export function CaseStudies() {
               Case studies.
             </h2>
             <p
-              className="text-muted-foreground max-w-md"
+              className="text-(--color-text-muted) max-w-md"
               style={{ fontSize: "0.9375rem", lineHeight: 1.65 }}
             >
               Selected projects that demonstrate systems thinking, engineering
@@ -137,16 +137,16 @@ export function CaseStudies() {
           {caseStudies.map((cs) => (
             <Card
               key={cs.id}
-              className="group bg-white border-border hover:border-foreground/20 hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300 overflow-hidden cursor-pointer gap-0"
+              className="group bg-white border-(--color-border-default) hover:border-(--color-text-primary)/20 hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300 overflow-hidden cursor-pointer gap-0"
             >
               {/* Top accent bar */}
-              <div className="h-px bg-gradient-to-r from-foreground/10 via-foreground/20 to-foreground/10" />
+              <div className="h-px bg-gradient-to-r from-(--color-text-primary)/10 via-(--color-text-primary)/20 to-(--color-text-primary)/10" />
 
               <CardHeader className="px-8 pt-8 pb-0 gap-3">
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <p
-                      className="text-muted-foreground mb-1"
+                      className="text-(--color-text-muted) mb-1"
                       style={{
                         fontSize: "0.75rem",
                         fontWeight: 500,
@@ -157,7 +157,7 @@ export function CaseStudies() {
                       {cs.company} · {cs.year}
                     </p>
                     <CardTitle
-                      className="text-foreground"
+                      className="text-(--color-text-primary)"
                       style={{
                         fontSize: "1.375rem",
                         fontWeight: 700,
@@ -168,7 +168,7 @@ export function CaseStudies() {
                       {cs.title}
                     </CardTitle>
                   </div>
-                  <div className="size-8 rounded-full border border-border flex items-center justify-center text-muted-foreground group-hover:bg-foreground group-hover:text-white group-hover:border-foreground transition-all shrink-0 mt-0.5">
+                  <div className="size-8 rounded-full border border-(--color-border-default) flex items-center justify-center text-(--color-text-muted) group-hover:bg-(--color-text-primary) group-hover:text-white group-hover:border-(--color-text-primary) transition-all shrink-0 mt-0.5">
                     <ArrowUpRight size={14} />
                   </div>
                 </div>
@@ -184,7 +184,7 @@ export function CaseStudies() {
                   ].map((item) => (
                     <div key={item.label}>
                       <p
-                        className="text-foreground mb-1"
+                        className="text-(--color-text-primary) mb-1"
                         style={{
                           fontSize: "0.75rem",
                           fontWeight: 600,
@@ -206,7 +206,7 @@ export function CaseStudies() {
                 {/* Focus areas */}
                 <div>
                   <p
-                    className="text-muted-foreground mb-2.5"
+                    className="text-(--color-text-muted) mb-2.5"
                     style={{
                       fontSize: "0.75rem",
                       fontWeight: 500,
@@ -221,7 +221,7 @@ export function CaseStudies() {
                       <Badge
                         key={f}
                         variant="secondary"
-                        className="rounded-full px-2.5 py-0.5 border-0 bg-secondary text-foreground"
+                        className="rounded-full px-2.5 py-0.5 border-0 bg-(--color-action-secondary) text-(--color-text-primary)"
                         style={{ fontSize: "0.75rem", fontWeight: 500 }}
                       >
                         {f}
@@ -231,11 +231,11 @@ export function CaseStudies() {
                 </div>
 
                 {/* Tech tags */}
-                <div className="flex flex-wrap gap-1.5 pt-2 border-t border-border">
+                <div className="flex flex-wrap gap-1.5 pt-2 border-t border-(--color-border-default)">
                   {cs.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-muted-foreground"
+                      className="text-(--color-text-muted)"
                       style={{ fontSize: "0.75rem" }}
                     >
                       #{tag}

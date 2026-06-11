@@ -40,7 +40,7 @@ export function Contact() {
         {/* Section header */}
         <div className="mb-16 max-w-2xl">
           <p
-            className="text-muted-foreground mb-3"
+            className="text-(--color-text-muted) mb-3"
             style={{
               fontSize: "0.8125rem",
               fontWeight: 500,
@@ -51,7 +51,7 @@ export function Contact() {
             Contact
           </p>
           <h2
-            className="text-foreground tracking-tight mb-4"
+            className="text-(--color-text-primary) tracking-tight mb-4"
             style={{
               fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)",
               fontWeight: 700,
@@ -63,7 +63,7 @@ export function Contact() {
             roles.
           </h2>
           <p
-            className="text-muted-foreground"
+            className="text-(--color-text-muted)"
             style={{ fontSize: "1.0625rem", lineHeight: 1.7 }}
           >
             I'm actively exploring new opportunities. If you're building design
@@ -86,32 +86,32 @@ export function Contact() {
                     ? "noopener noreferrer"
                     : undefined
                 }
-                className="group flex items-start gap-5 p-6 rounded-xl border border-border hover:border-foreground/20 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-all duration-200 bg-white"
+                className="group flex items-start gap-5 p-6 rounded-xl border border-(--color-border-default) hover:border-(--color-text-primary)/20 hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-all duration-200 bg-white"
               >
-                <div className="size-10 rounded-lg bg-secondary border border-border flex items-center justify-center shrink-0 group-hover:bg-foreground group-hover:border-foreground group-hover:text-white transition-all duration-200">
+                <div className="size-10 rounded-lg bg-(--color-action-secondary) border border-(--color-border-default) flex items-center justify-center shrink-0 group-hover:bg-(--color-text-primary) group-hover:border-(--color-text-primary) group-hover:text-white transition-all duration-200">
                   <Icon size={18} strokeWidth={1.75} />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between gap-2 mb-1">
                     <p
-                      className="text-foreground"
+                      className="text-(--color-text-primary)"
                       style={{ fontSize: "0.9375rem", fontWeight: 600 }}
                     >
                       {link.label}
                     </p>
                     <ArrowUpRight
                       size={14}
-                      className="text-muted-foreground group-hover:text-foreground transition-colors shrink-0"
+                      className="text-(--color-text-muted) group-hover:text-(--color-text-primary) transition-colors shrink-0"
                     />
                   </div>
                   <p
-                    className="text-muted-foreground truncate mb-1"
+                    className="text-(--color-text-muted) truncate mb-1"
                     style={{ fontSize: "0.8125rem", fontFamily: "monospace" }}
                   >
                     {link.handle}
                   </p>
                   <p
-                    className="text-muted-foreground"
+                    className="text-(--color-text-muted)"
                     style={{ fontSize: "0.8125rem", lineHeight: 1.55 }}
                   >
                     {link.description}
@@ -123,15 +123,15 @@ export function Contact() {
         </div>
 
         {/* Footer rule */}
-        <div className="mt-24 pt-8 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="mt-24 pt-8 border-t border-(--color-border-default) flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <p
-            className="text-muted-foreground"
+            className="text-(--color-text-muted)"
             style={{ fontSize: "0.8125rem" }}
           >
             Ayanna Humes · Senior UX Engineer
           </p>
           <p
-            className="text-muted-foreground"
+            className="text-(--color-text-muted)"
             style={{ fontSize: "0.8125rem" }}
           >
             Built with React, TypeScript, and Tailwind CSS

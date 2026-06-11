@@ -20,8 +20,8 @@
           "focus": { "value": "{color.primitive.blue.500}", "type": "color" }
         },
         "action": {
-          "primary": { "value": "{color.primitive.blue.700}", "type": "color" },
-          "primaryHover": { "value": "{color.primitive.blue.500}", "type": "color" },
+          "primary": { "value": "{color.primitive.neutral.900}", "type": "color" },
+          "primaryHover": { "value": "{color.primitive.neutral.700}", "type": "color" },
           "secondary": { "value": "{color.primitive.neutral.100}", "type": "color" },
           "secondaryHover": { "value": "{color.primitive.neutral.200}", "type": "color" }
         },

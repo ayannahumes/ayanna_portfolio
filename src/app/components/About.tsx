@@ -44,7 +44,7 @@ export function About() {
         {/* Section header */}
         <div className="mb-16">
           <p
-            className="text-muted-foreground mb-3"
+            className="text-(--color-text-muted) mb-3"
             style={{
               fontSize: "0.8125rem",
               fontWeight: 500,
@@ -55,7 +55,7 @@ export function About() {
             About
           </p>
           <h2
-            className="text-foreground tracking-tight max-w-2xl"
+            className="text-(--color-text-primary) tracking-tight max-w-2xl"
             style={{
               fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)",
               fontWeight: 700,
@@ -71,7 +71,7 @@ export function About() {
           {/* Bio */}
           <div>
             <div
-              className="space-y-5 text-muted-foreground"
+              className="space-y-5 text-(--color-text-muted)"
               style={{ fontSize: "1rem", lineHeight: 1.75 }}
             >
               <p>
@@ -98,18 +98,18 @@ export function About() {
             <div className="mt-10 space-y-6">
               {highlights.map((h) => (
                 <div key={h.label} className="flex gap-4">
-                  <div className="mt-1 size-5 shrink-0 rounded-full bg-foreground flex items-center justify-center">
+                  <div className="mt-1 size-5 shrink-0 rounded-full bg-(--color-text-primary) flex items-center justify-center">
                     <div className="size-1.5 rounded-full bg-white" />
                   </div>
                   <div>
                     <p
-                      className="text-foreground mb-1"
+                      className="text-(--color-text-primary) mb-1"
                       style={{ fontSize: "0.9375rem", fontWeight: 600 }}
                     >
                       {h.label}
                     </p>
                     <p
-                      className="text-muted-foreground"
+                      className="text-(--color-text-muted)"
                       style={{ fontSize: "0.875rem", lineHeight: 1.65 }}
                     >
                       {h.description}
@@ -123,13 +123,13 @@ export function About() {
           {/* Skills */}
           <div>
             <p
-              className="text-foreground mb-6"
+              className="text-(--color-text-primary) mb-6"
               style={{
                 fontSize: "0.8125rem",
                 fontWeight: 500,
                 letterSpacing: "0.06em",
                 textTransform: "uppercase",
-                color: "var(--muted-foreground)",
+                color: "var(--color-text-muted)",
               }}
             >
               Core skills &amp; tools
@@ -139,7 +139,7 @@ export function About() {
                 <Badge
                   key={skill}
                   variant="outline"
-                  className="px-3 py-1 rounded-full border-border text-foreground bg-white hover:bg-secondary transition-colors cursor-default"
+                  className="px-3 py-1 rounded-full border-(--color-border-default) text-(--color-text-primary) bg-white hover:bg-(--color-action-secondary) transition-colors cursor-default"
                   style={{ fontSize: "0.8125rem", fontWeight: 500 }}
                 >
                   {skill}
@@ -148,9 +148,9 @@ export function About() {
             </div>
 
             {/* Experience strip */}
-            <div className="mt-12 p-6 rounded-xl border border-border bg-secondary">
+            <div className="mt-12 p-6 rounded-xl border border-(--color-border-default) bg-(--color-action-secondary)">
               <p
-                className="text-muted-foreground mb-4"
+                className="text-(--color-text-muted) mb-4"
                 style={{
                   fontSize: "0.75rem",
                   fontWeight: 500,
@@ -189,20 +189,20 @@ export function About() {
                   >
                     <div>
                       <p
-                        className="text-foreground"
+                        className="text-(--color-text-primary)"
                         style={{ fontSize: "0.9375rem", fontWeight: 500 }}
                       >
                         {exp.role}
                       </p>
                       <p
-                        className="text-muted-foreground"
+                        className="text-(--color-text-muted)"
                         style={{ fontSize: "0.8125rem" }}
                       >
                         {exp.company}
                       </p>
                     </div>
                     <span
-                      className="text-muted-foreground shrink-0"
+                      className="text-(--color-text-muted) shrink-0"
                       style={{ fontSize: "0.8125rem" }}
                     >
                       {exp.period}

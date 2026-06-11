@@ -50,14 +50,14 @@ export function Nav() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-white/90 backdrop-blur-md border-b border-border shadow-[0_1px_0_rgba(0,0,0,0.06)]"
+          ? "bg-white/90 backdrop-blur-md border-b border-(--color-border-default) shadow-[0_1px_0_rgba(0,0,0,0.06)]"
           : "bg-transparent",
       )}
     >
       <nav className="max-w-7xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
         <a
           href="#"
-          className="text-foreground font-semibold tracking-tight text-sm"
+          className="text-(--color-text-primary) font-semibold tracking-tight text-sm"
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
@@ -72,7 +72,7 @@ export function Nav() {
             <li key={link.href}>
               <button
                 onClick={() => handleLink(link.href)}
-                className="px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-md hover:bg-accent"
+                className="px-3 py-1.5 text-sm text-(--color-text-muted) hover:text-(--color-text-primary) transition-colors rounded-md hover:bg-(--color-action-secondary-hover)"
               >
                 {link.label}
               </button>
@@ -137,7 +137,7 @@ export function Nav() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden p-2 rounded-md hover:bg-accent transition-colors"
+          className="md:hidden p-2 rounded-md hover:bg-(--color-action-secondary-hover) transition-colors"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -147,13 +147,13 @@ export function Nav() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md border-b border-border px-6 pb-4">
+        <div className="md:hidden bg-white/95 backdrop-blur-md border-b border-(--color-border-default) px-6 pb-4">
           <ul className="flex flex-col gap-0.5">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <button
                   onClick={() => handleLink(link.href)}
-                  className="w-full text-left px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                  className="w-full text-left px-3 py-2.5 text-sm text-(--color-text-muted) hover:text-(--color-text-primary) hover:bg-(--color-action-secondary-hover) rounded-md transition-colors"
                 >
                   {link.label}
                 </button>
