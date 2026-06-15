@@ -12,11 +12,14 @@ import {
 } from "@/design-system/components/dropdown-menu";
 import type { ColorMode, ThemeName } from "@/design-system/theme";
 
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Case Studies", href: "#case-studies" },
-  { label: "Process", href: "#process" },
-  { label: "Contact", href: "#contact" },
+  { label: "Case Studies", href: `${baseUrl}#case-studies`, section: "#case-studies" },
+  { label: "About", href: `${baseUrl}about` },
+  { label: "Contact", href: `${baseUrl}#contact`, section: "#contact" },
 ];
 
 export function Nav({
@@ -39,10 +42,17 @@ export function Nav({
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleLink = (href: string) => {
+  const handleLink = (href: string, section?: string) => {
     setMobileOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (section) {
+      const el = document.querySelector(section);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+    }
+
+    window.location.href = href;
   };
 
   return (
@@ -60,7 +70,7 @@ export function Nav({
           className="text-(--color-text-primary) text-[length:var(--text-style-body-font-size)] font-(--text-style-h3-font-weight) leading-(--text-style-body-line-height) tracking-(--text-style-body-letter-spacing)"
           onClick={(e) => {
             e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            window.location.href = baseUrl;
           }}
         >
           Ayanna Humes
@@ -71,7 +81,7 @@ export function Nav({
           {navLinks.map((link) => (
             <li key={link.href}>
               <button
-                onClick={() => handleLink(link.href)}
+                onClick={() => handleLink(link.href, link.section)}
                 className="px-3 py-1.5 text-(--button-ghost-text) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) transition-colors rounded-(--button-shape-radius) hover:bg-(--button-ghost-background-hover) hover:text-(--color-text-primary)"
               >
                 {link.label}
@@ -83,7 +93,7 @@ export function Nav({
         <Button
           size="sm"
           className="hidden md:inline-flex"
-          onClick={() => handleLink("#contact")}
+          onClick={() => handleLink(`${baseUrl}#contact`, "#contact")}
         >
           Get in touch
         </Button>
@@ -139,7 +149,7 @@ export function Nav({
             {navLinks.map((link) => (
               <li key={link.href}>
                 <button
-                  onClick={() => handleLink(link.href)}
+                  onClick={() => handleLink(link.href, link.section)}
                   className="w-full text-left px-3 py-2.5 text-(--button-ghost-text) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) hover:text-(--color-text-primary) hover:bg-(--button-ghost-background-hover) rounded-(--button-shape-radius) transition-colors"
                 >
                   {link.label}
@@ -150,7 +160,7 @@ export function Nav({
               <Button
                 size="sm"
                 className="w-full"
-                onClick={() => handleLink("#contact")}
+                onClick={() => handleLink(`${baseUrl}#contact`, "#contact")}
               >
                 Get in touch
               </Button>

@@ -3,7 +3,6 @@ import { Nav } from "./portfolio-sections/Nav";
 import { Hero } from "./portfolio-sections/Hero";
 import { About } from "./portfolio-sections/About";
 import { CaseStudies } from "./portfolio-sections/CaseStudies";
-import { Process } from "./portfolio-sections/Process";
 import { Contact } from "./portfolio-sections/Contact";
 import { DesignSystemCaseStudy } from "./features/case-studies/design-system/DesignSystemCaseStudy";
 import { ComponentDeepDiveCaseStudy } from "./features/case-studies/component-deep-dive/ComponentDeepDiveCaseStudy";
@@ -40,15 +39,45 @@ function PortfolioHome({
   setTheme: (theme: ThemeName) => void;
   setMode: (mode: ColorMode) => void;
 }) {
+  useEffect(() => {
+    if (!window.location.hash) return;
+
+    const scrollToHash = () => {
+      const el = document.querySelector(window.location.hash);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    };
+
+    window.requestAnimationFrame(scrollToHash);
+  }, []);
+
   return (
     <>
       <Nav theme={theme} mode={mode} setTheme={setTheme} setMode={setMode} />
       <main>
         <Hero />
-        <About />
         <CaseStudies />
-        <Process />
         <Contact />
+      </main>
+    </>
+  );
+}
+
+function AboutPage({
+  theme,
+  mode,
+  setTheme,
+  setMode,
+}: {
+  theme: ThemeName;
+  mode: ColorMode;
+  setTheme: (theme: ThemeName) => void;
+  setMode: (mode: ColorMode) => void;
+}) {
+  return (
+    <>
+      <Nav theme={theme} mode={mode} setTheme={setTheme} setMode={setMode} />
+      <main className="pt-16">
+        <About />
       </main>
     </>
   );
@@ -84,12 +113,21 @@ export default function App() {
   return (
     <div className="min-h-screen bg-(--color-background-page) text-(--color-text-primary)">
       {caseStudyRoutes[route] ?? (
-        <PortfolioHome
-          theme={theme}
-          mode={mode}
-          setTheme={setTheme}
-          setMode={setMode}
-        />
+        route === "/about" ? (
+          <AboutPage
+            theme={theme}
+            mode={mode}
+            setTheme={setTheme}
+            setMode={setMode}
+          />
+        ) : (
+          <PortfolioHome
+            theme={theme}
+            mode={mode}
+            setTheme={setTheme}
+            setMode={setMode}
+          />
+        )
       )}
     </div>
   );

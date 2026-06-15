@@ -1,5 +1,9 @@
 import { Badge } from "@/design-system/components/badge";
 
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
 const skills = [
   "Design Systems",
   "UX Engineering",
@@ -39,10 +43,10 @@ const highlights = [
 
 export function About() {
   return (
-    <section id="about" className="bg-(--color-background-page) py-32">
+    <section id="about" className="bg-(--color-background-page) py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Section header */}
-        <div className="mb-16">
+        <div className="mb-8">
           <p className="mb-3 text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) tracking-(--text-style-caption-letter-spacing) uppercase">
             About
           </p>
@@ -51,32 +55,11 @@ export function About() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-12">
           {/* Bio */}
           <div>
-            <div className="space-y-5 text-(--color-text-muted) text-[length:var(--text-style-body-font-size)] font-(--text-style-body-font-weight) leading-(--text-style-body-line-height) tracking-(--text-style-body-letter-spacing)">
-              <p>
-                I'm a Senior UX Engineer specializing in design systems,
-                component architecture, and developer experience. My background
-                spans iOS engineering, front-end web development, and design —
-                which means I think systemically about the whole stack, not just
-                one layer.
-              </p>
-              <p>
-                I've built and maintained production design systems used by
-                cross-functional teams, developed Generative UI prototypes to
-                debug platform behavior, and established accessibility-first
-                engineering standards across multiple organizations.
-              </p>
-              <p>
-                Whether I'm authoring Figma tokens, writing a React component
-                library, or scaffolding a Next.js architecture, my goal is the
-                same: reduce friction between design intent and shipped code.
-              </p>
-            </div>
-
             {/* Highlights */}
-            <div className="mt-10 space-y-6">
+            <div className="space-y-5">
               {highlights.map((h) => (
                 <div key={h.label} className="flex gap-4">
                   <div className="mt-1 size-5 shrink-0 rounded-full bg-(--color-text-primary) flex items-center justify-center">
@@ -93,6 +76,13 @@ export function About() {
                 </div>
               ))}
             </div>
+
+            <img
+              src={`${baseUrl}case-studies/prism-ios/design-engineers.jpeg`}
+              alt="DoorDash design engineers team photo"
+              className="mt-8 aspect-[16/9] w-full rounded-(--card-radius) border border-(--card-border) object-cover shadow-(--card-shadow)"
+              loading="lazy"
+            />
           </div>
 
           {/* Skills */}
@@ -113,7 +103,7 @@ export function About() {
             </div>
 
             {/* Experience strip */}
-            <div className="mt-12 rounded-(--card-radius) border-(length:--card-border-width) border-(--card-border) bg-(--card-background) p-(--card-content-spacing)">
+            <div className="mt-8 rounded-(--card-radius) border-(length:--card-border-width) border-(--card-border) bg-(--card-background) p-(--card-content-spacing)">
               <p className="mb-4 text-(--card-description-text) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) tracking-(--text-style-caption-letter-spacing) uppercase">
                 Experience
               </p>

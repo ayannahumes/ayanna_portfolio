@@ -41,10 +41,10 @@ const links: {
 
 export function Contact() {
   return (
-    <section id="contact" className="bg-(--color-background-page) py-32">
+    <section id="contact" className="bg-(--color-background-page) py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Section header */}
-        <div className="mb-16 max-w-2xl">
+        <div className="mb-8 max-w-2xl">
           <p className="mb-3 text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) tracking-(--text-style-caption-letter-spacing) uppercase">
             Contact
           </p>
@@ -97,7 +97,7 @@ export function Contact() {
         </div>
 
         {/* Footer rule */}
-        <div className="mt-24 pt-8 border-t border-(--color-border-default) flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="mt-14 pt-6 border-t border-(--color-border-default) flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <p className="text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-body-font-weight) leading-(--text-style-caption-line-height)">
             Ayanna Humes · Senior UX Engineer
           </p>

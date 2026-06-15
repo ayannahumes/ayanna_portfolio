@@ -8,12 +8,12 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center pt-16">
+    <section className="relative min-h-[64vh] flex flex-col justify-center pt-16">
       {/* Subtle grid background */}
       <div className="absolute inset-0 pointer-events-none [background-image:var(--hero-background-grid-horizontal),var(--hero-background-grid-vertical)] [background-size:64px_64px]" />
 
-      <div className="relative max-w-7xl mx-auto px-6 md:px-8 w-full py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto px-6 md:px-8 w-full py-12 md:py-16">
+        <div className="grid grid-cols-1 gap-16 items-center">
           {/* Text content */}
           <div className="max-w-3xl">
             {/* Available badge */}
@@ -63,54 +63,12 @@ export function Hero() {
                 </a>
               </Button>
             </div>
-
-            {/* Social proof strip */}
-            <div className="flex flex-wrap items-center gap-6 mt-12 pt-10 border-t border-(--color-border-default)">
-              {[
-                { label: "9+", sub: "Years Engineering" },
-                { label: "3", sub: "Design Systems Built" },
-                { label: "40+", sub: "Components Shipped" },
-                { label: "3", sub: "Platforms (iOS, Web, DS)" },
-              ].map((stat) => (
-                <div key={stat.label} className="flex flex-col">
-                  <span
-                    className="text-(--color-text-primary) text-[length:var(--text-style-h3-font-size)] font-(--text-style-h3-font-weight) leading-(--text-style-h3-line-height)"
-                  >
-                    {stat.label}
-                  </span>
-                  <span
-                    className="text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-body-font-weight) leading-(--text-style-caption-line-height)"
-                  >
-                    {stat.sub}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Portrait placeholder */}
-          <div className="hidden lg:flex flex-col items-center gap-4">
-            <div className="relative h-[360px] w-[300px] overflow-hidden rounded-(--card-radius) border border-(--card-border) bg-(--card-background) shadow-(--card-shadow)">
-              <img
-                src={`${import.meta.env.BASE_URL}/ayanna-portrait.jpg`}
-                alt="Ayanna Humes"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-
-              {/* Decorative bottom band */}
-              <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-(--color-action-secondary) to-transparent" />
-            </div>
-            <p
-              className="text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-body-font-weight) leading-(--text-style-caption-line-height)"
-            >
-              Ayanna Humes · Senior UX Engineer
-            </p>
           </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-(--color-text-muted)">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-(--color-text-muted)">
         <div className="h-10 w-px bg-gradient-to-b from-transparent to-(--color-border-default)" />
       </div>
     </section>
