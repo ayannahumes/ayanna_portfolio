@@ -1,6 +1,0 @@
-@theme inline {
-  --radius-sm: var(--badge-shape-radius);
-  --radius-md: var(--button-shape-radius);
-  --radius-lg: var(--button-shape-radius);
-  --radius-xl: var(--card-radius);
-}
