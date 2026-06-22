@@ -5,7 +5,6 @@ import { About } from "./portfolio-sections/About";
 import { CaseStudies } from "./portfolio-sections/CaseStudies";
 import { Contact } from "./portfolio-sections/Contact";
 import { DesignSystemCaseStudy } from "./features/case-studies/design-system/DesignSystemCaseStudy";
-import { ComponentDeepDiveCaseStudy } from "./features/case-studies/component-deep-dive/ComponentDeepDiveCaseStudy";
 import { GenerativeUiCaseStudy } from "./features/case-studies/generative-ui/GenerativeUiCaseStudy";
 import {
   setActiveTheme,
@@ -44,7 +43,11 @@ function PortfolioHome({
 
     const scrollToHash = () => {
       const el = document.querySelector(window.location.hash);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
+      if (!el) return;
+      const prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      el.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth" });
     };
 
     window.requestAnimationFrame(scrollToHash);
@@ -53,10 +56,9 @@ function PortfolioHome({
   return (
     <>
       <Nav theme={theme} mode={mode} setTheme={setTheme} setMode={setMode} />
-      <main>
+      <main id="main-content">
         <Hero />
         <CaseStudies />
-        <Contact />
       </main>
     </>
   );
@@ -76,8 +78,29 @@ function AboutPage({
   return (
     <>
       <Nav theme={theme} mode={mode} setTheme={setTheme} setMode={setMode} />
-      <main className="pt-16">
+      <main id="main-content" className="pt-16">
         <About />
+      </main>
+    </>
+  );
+}
+
+function ContactPage({
+  theme,
+  mode,
+  setTheme,
+  setMode,
+}: {
+  theme: ThemeName;
+  mode: ColorMode;
+  setTheme: (theme: ThemeName) => void;
+  setMode: (mode: ColorMode) => void;
+}) {
+  return (
+    <>
+      <Nav theme={theme} mode={mode} setTheme={setTheme} setMode={setMode} />
+      <main id="main-content" className="pt-16">
+        <Contact />
       </main>
     </>
   );
@@ -101,7 +124,6 @@ export default function App() {
     "/case-studies/generative-ui": <GenerativeUiCaseStudy />,
     "/case-studies/design-system": <DesignSystemCaseStudy />,
     "/design-system": <DesignSystemCaseStudy />,
-    "/case-studies/component-deep-dive": <ComponentDeepDiveCaseStudy />,
   };
 
   useEffect(() => {
@@ -112,9 +134,16 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-(--color-background-page) text-(--color-text-primary)">
-      {caseStudyRoutes[route] ?? (
-        route === "/about" ? (
+      {caseStudyRoutes[route] ??
+        (route === "/about" ? (
           <AboutPage
+            theme={theme}
+            mode={mode}
+            setTheme={setTheme}
+            setMode={setMode}
+          />
+        ) : route === "/contact" ? (
+          <ContactPage
             theme={theme}
             mode={mode}
             setTheme={setTheme}
@@ -127,8 +156,7 @@ export default function App() {
             setTheme={setTheme}
             setMode={setMode}
           />
-        )
-      )}
+        ))}
     </div>
   );
 }

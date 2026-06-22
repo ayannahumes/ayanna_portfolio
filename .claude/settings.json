@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(sed -n '/Case Study · DoorDash · 2022/,/<\\\\/Inline>/p' src/app/features/case-studies/design-system/DesignSystemCaseStudy.tsx)",
+      "Bash(sed -n '/Case Study · DoorDash · 2025/,/<\\\\/Inline>/p' src/app/features/case-studies/generative-ui/GenerativeUiCaseStudy.tsx)",
+      "WebFetch(domain:www.linkedin.com)"
+    ]
+  }
+}

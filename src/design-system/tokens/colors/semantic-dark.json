@@ -11,7 +11,7 @@
         "text": {
           "primary": { "value": "{color.primitive.neutral.50}", "type": "color" },
           "secondary": { "value": "{color.primitive.neutral.300}", "type": "color" },
-          "muted": { "value": "{color.primitive.neutral.500}", "type": "color" },
+          "muted": { "value": "{color.primitive.neutral.400}", "type": "color" },
           "inverse": { "value": "{color.primitive.neutral.900}", "type": "color" }
         },
         "border": {

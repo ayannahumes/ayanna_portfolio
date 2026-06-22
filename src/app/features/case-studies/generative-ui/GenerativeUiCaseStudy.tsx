@@ -1,4 +1,5 @@
 import { Icon } from "@/design-system/icons";
+import { Badge } from "@/design-system/components/badge";
 import { Button } from "@/design-system/components/button";
 import {
   Card,
@@ -12,7 +13,7 @@ import { Inline } from "@/design-system/components/inline";
 import { SectionHeader } from "@/design-system/components/section-header";
 import { Stack } from "@/design-system/components/stack";
 
-import { generativeUiLinks } from "./generativeUi.data";
+import { generativeUiBadges, generativeUiLinks } from "./generativeUi.data";
 
 const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
@@ -113,6 +114,29 @@ const developmentProcess = [
   "Continued iterating independently until departure",
 ];
 
+const metrics = [
+  {
+    value: "1 hr+",
+    label: "Time saved",
+    description: "Debugging time saved per carousel issue",
+  },
+  {
+    value: "5+ → 1",
+    label: "Tools unified",
+    description: "A multi-tool manual runbook collapsed into one pipeline",
+  },
+  {
+    value: "~30",
+    label: "Stakeholders",
+    description: "Presented to the Growth org to strong reception",
+  },
+  {
+    value: "5",
+    label: "Squad led",
+    description: "Founded and led TOAD, a cross-functional R&D squad",
+  },
+];
+
 const results = [
   "Presented to ~30 people across the Growth org to strong reception",
   "Recognized in performance review for reducing carousel debugging time by over an hour per issue",
@@ -121,9 +145,9 @@ const results = [
 ];
 
 const learnings = [
-  "Getting access to internal tools was the biggest friction point — permissions and missing connections slowed down how many systems could be fully integrated in the prototype",
+  "Getting access to internal tools was the biggest friction point. Permissions and missing connections slowed down how many systems could be fully integrated in the prototype",
   "The GenUI layer proved that the same orchestration pipeline could power fundamentally different output surfaces without any changes to the underlying architecture",
-  "The Growth org's appetite for programmatic carousel support pointed to a clear next phase: two entry points — one inside Carousel Manager scoped to managed carousels, and one inside dev tools that could debug both managed and programmatic carousels",
+  "The Growth org's appetite for programmatic carousel support pointed to a clear next phase: two entry points, one inside Carousel Manager scoped to managed carousels, and one inside dev tools that could debug both managed and programmatic carousels",
   "The project still needs one more prototype iteration to get to a place where it could go in front of leadership for resourcing",
 ];
 
@@ -143,6 +167,19 @@ function CaseStudySection({
   );
 }
 
+function ImageFrame({ image }: { image: { src: string; alt: string } }) {
+  return (
+    <figure className="overflow-hidden rounded-(--card-radius) border border-(--card-border) bg-(--card-background) shadow-(--card-shadow)">
+      <img
+        src={image.src}
+        alt={image.alt}
+        className="block aspect-[16/9] w-full object-contain"
+        loading="lazy"
+      />
+    </figure>
+  );
+}
+
 function ChecklistCard({ item }: { item: string }) {
   return (
     <Card className="rounded-(--card-radius) border-(--card-border)">
@@ -154,31 +191,49 @@ function ChecklistCard({ item }: { item: string }) {
   );
 }
 
+function MetricCard({
+  value,
+  label,
+  description,
+}: {
+  value: string;
+  label: string;
+  description: string;
+}) {
+  return (
+    <Card className="rounded-(--card-radius) border-(--card-border) shadow-(--card-shadow)">
+      <CardHeader>
+        <CardTitle className="text-(--color-text-primary) text-[length:var(--text-style-h2-font-size)] font-(--text-style-h2-font-weight) leading-(--text-style-h2-line-height) tracking-(--text-style-h2-letter-spacing)">
+          {value}
+        </CardTitle>
+        <p className={captionText}>{label}</p>
+      </CardHeader>
+      <CardContent>
+        <CardDescription className={bodyText}>{description}</CardDescription>
+      </CardContent>
+    </Card>
+  );
+}
+
 export function GenerativeUiCaseStudy() {
   return (
     <main className="min-h-screen bg-(--color-background-page) text-(--color-text-primary)">
       <section className="pt-(--space-4xl) pb-(--space-3xl)">
         <Container>
           <Stack gap="xl">
-            <Inline gap="md">
-              <Button asChild variant="outline">
-                <a href={generativeUiLinks.portfolio}>
-                  <Icon name="arrow-left" size="sm" />
-                  Back to Portfolio
-                </a>
-              </Button>
-            </Inline>
+            <Button asChild variant="outline" className="w-fit">
+              <a href={generativeUiLinks.portfolio}>
+                <Icon name="arrow-left" size="sm" />
+                Back to Portfolio
+              </a>
+            </Button>
 
-            <Stack gap="lg" className="w-full">
-              <img
-                src={carouselImage.src}
-                alt={carouselImage.alt}
-                className="h-64 w-full rounded-(--card-radius) object-cover object-top md:h-80 lg:h-96"
-              />
-              <h1 className="text-(--color-text-primary) text-[length:var(--text-style-display-font-size)] font-(--text-style-display-font-weight) leading-(--text-style-display-line-height) tracking-(--text-style-display-letter-spacing) lg:whitespace-nowrap">
-                Debugging Carousels with Genarative UI
+            <Stack gap="lg">
+              <p className={captionText}>Case Study · DoorDash · 2025–2026</p>
+              <h1 className="text-(--color-text-primary) text-[length:var(--text-style-display-font-size)] font-(--text-style-display-font-weight) leading-(--text-style-display-line-height) tracking-(--text-style-display-letter-spacing)">
+                Debugging Carousels with Generative UI
               </h1>
-              <p className="max-w-(--layout-content-default) text-(--color-text-secondary) text-[length:var(--text-style-body-lg-font-size)] font-(--text-style-body-lg-font-weight) leading-(--text-style-body-lg-line-height) tracking-(--text-style-body-lg-letter-spacing)">
+              <p className="text-(--color-text-secondary) text-[length:var(--text-style-body-lg-font-size)] font-(--text-style-body-lg-font-weight) leading-(--text-style-body-lg-line-height) tracking-(--text-style-body-lg-letter-spacing)">
                 A prototype internal debugger born out of DoorDash&apos;s TOAD
                 (Tools, Optimization, and Advanced Development) initiative that
                 automates the process of diagnosing why any consumer-facing
@@ -186,7 +241,20 @@ export function GenerativeUiCaseStudy() {
                 pipeline and telling you exactly what&apos;s wrong and how to fix
                 it.
               </p>
+              <Inline gap="xs" className="w-full justify-between gap-y-(--space-xs)">
+                {generativeUiBadges.map((badge) => (
+                  <Badge
+                    key={badge}
+                    variant="secondary"
+                    className="rounded-(--badge-shape-radius) border-0 bg-(--badge-secondary-background) text-(--badge-secondary-text)"
+                  >
+                    {badge}
+                  </Badge>
+                ))}
+              </Inline>
             </Stack>
+
+            <ImageFrame image={carouselImage} />
           </Stack>
         </Container>
       </section>
@@ -198,11 +266,11 @@ export function GenerativeUiCaseStudy() {
               key={detail.label}
               className={
                 detail.label === "Problem solved"
-                  ? "rounded-(--card-radius) border-(--card-border) lg:col-span-3"
-                  : "rounded-(--card-radius) border-(--card-border)"
+                  ? "justify-center rounded-(--card-radius) border-(--card-border) lg:col-span-3"
+                  : "justify-center rounded-(--card-radius) border-(--card-border)"
               }
             >
-              <CardHeader>
+              <CardHeader className="pb-6">
                 <p className={captionText}>{detail.label}</p>
                 <CardTitle className="text-(--color-text-primary) text-[length:var(--text-style-body-font-size)] font-(--text-style-h3-font-weight) leading-(--text-style-body-line-height)">
                   {detail.value}
@@ -211,12 +279,17 @@ export function GenerativeUiCaseStudy() {
             </Card>
           ))}
         </div>
+        <div className="grid gap-(--space-md) md:grid-cols-2 lg:grid-cols-4">
+          {metrics.map((metric) => (
+            <MetricCard key={metric.value} {...metric} />
+          ))}
+        </div>
       </CaseStudySection>
 
       <CaseStudySection>
         <SectionHeader
           eyebrow="Challenge"
-          title="Debugging a broken carousel had become one of the most painful support workflows."
+          title="Five tools, one runbook, a day lost"
           description="While leading TOAD, a self-directed enablement squad of five engineers, we identified that debugging a broken carousel was one of the most painful and time-consuming processes teams dealt with. There was no tooling, just a long Confluence runbook and a support channel to ping when you got stuck."
         />
         <img
@@ -246,7 +319,7 @@ export function GenerativeUiCaseStudy() {
       <CaseStudySection className="bg-(--color-background-surface)">
         <SectionHeader
           eyebrow="Process"
-          title="The work moved from runbook audit to coded prototype to GenUI output layer."
+          title="From runbook audit to GenUI output"
         />
         <div className="grid gap-(--space-md) lg:grid-cols-2">
           <Card className="rounded-(--card-radius) border-(--card-border)">
@@ -286,7 +359,7 @@ export function GenerativeUiCaseStudy() {
       <CaseStudySection>
         <SectionHeader
           eyebrow="Runbook Flow"
-          title="The manual diagnostic path became the blueprint for the debugger."
+          title="The runbook became the blueprint"
         />
         <img
           src={runbookFlowchartImage.src}
@@ -299,7 +372,7 @@ export function GenerativeUiCaseStudy() {
       <CaseStudySection className="bg-(--color-background-surface)">
         <SectionHeader
           eyebrow="Prototype"
-          title="The debug entry point lives where teams already manage carousels."
+          title="Debugging where teams already work"
         />
         <img
           src={prototypeCarouselManagerImage.src}
@@ -312,7 +385,7 @@ export function GenerativeUiCaseStudy() {
       <CaseStudySection>
         <SectionHeader
           eyebrow="Results and Impact"
-          title="The prototype proved the value of automated carousel diagnosis."
+          title="Proof the approach works"
         />
         <div className="grid gap-(--space-md) md:grid-cols-2">
           {results.map((result) => (
@@ -324,7 +397,7 @@ export function GenerativeUiCaseStudy() {
       <CaseStudySection>
         <SectionHeader
           eyebrow="Standard Demo"
-          title="The first prototype automated the runbook inside the debugger flow."
+          title="Automating the runbook, step by step"
         />
         <video
           className="aspect-video w-full rounded-(--card-radius) border border-(--card-border) bg-(--color-background-page) object-cover shadow-(--card-shadow)"
@@ -344,7 +417,7 @@ export function GenerativeUiCaseStudy() {
       <CaseStudySection className="bg-(--color-background-surface)">
         <SectionHeader
           eyebrow="GenUI Demo"
-          title="The generated output layer turns pipeline failures into actionable guidance."
+          title="Failures become guidance"
         />
         <video
           className="aspect-video w-full rounded-(--card-radius) border border-(--card-border) bg-(--color-background-page) object-cover shadow-(--card-shadow)"
@@ -364,13 +437,21 @@ export function GenerativeUiCaseStudy() {
       <CaseStudySection className="bg-(--color-background-surface)">
         <SectionHeader
           eyebrow="Learnings and Next Steps"
-          title="The next phase is broader coverage and one more leadership-ready prototype."
+          title="What I learned, what's next"
         />
         <div className="grid gap-(--space-md) md:grid-cols-2">
           {learnings.map((learning) => (
             <ChecklistCard key={learning} item={learning} />
           ))}
         </div>
+        <Inline gap="md">
+          <Button asChild>
+            <a href={generativeUiLinks.portfolio}>
+              Back to Portfolio
+              <Icon name="arrow-right" size="sm" />
+            </a>
+          </Button>
+        </Inline>
       </CaseStudySection>
     </main>
   );

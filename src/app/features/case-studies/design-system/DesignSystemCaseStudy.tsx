@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import { Icon } from "@/design-system/icons";
+import { Badge } from "@/design-system/components/badge";
 import { Button } from "@/design-system/components/button";
 import {
   Card,
@@ -15,32 +16,39 @@ import { SectionHeader } from "@/design-system/components/section-header";
 import { Stack } from "@/design-system/components/stack";
 
 import {
-  accessibility,
-  architecture,
+  approachIntro,
+  approachListCell,
   caseStudyImages,
   caseStudyTitle,
   designSystemCaseStudyLinks,
-  designToCode,
-  developerTooling,
-  differently,
-  figmaSchema,
+  heroSummary,
   impactMetrics,
-  openingSummary,
+  outcome,
+  pipeline,
   problem,
-  quantityStepper,
-  scope,
+  problemCallout,
+  problemClosing,
+  projectDetails,
+  reflections,
+  roleDrove,
+  roleIntro,
+  roleOwned,
+  tags,
 } from "./designSystemCaseStudy.data";
 
 const bodyText =
   "text-(--color-text-secondary) text-[length:var(--text-style-body-font-size)] font-(--text-style-body-font-weight) leading-(--text-style-body-line-height) tracking-(--text-style-body-letter-spacing)";
 const bodyLargeText =
   "text-(--color-text-secondary) text-[length:var(--text-style-body-lg-font-size)] font-(--text-style-body-lg-font-weight) leading-(--text-style-body-lg-line-height) tracking-(--text-style-body-lg-letter-spacing)";
+const captionText =
+  "text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) tracking-(--text-style-caption-letter-spacing) uppercase";
 const h3Text =
   "text-(--color-text-primary) text-[length:var(--text-style-h3-font-size)] font-(--text-style-h3-font-weight) leading-(--text-style-h3-line-height) tracking-(--text-style-h3-letter-spacing)";
 
 type CaseStudyImage = {
   src: string;
   alt: string;
+  caption?: string;
 };
 
 function CaseStudySection({
@@ -61,7 +69,7 @@ function CaseStudySection({
 
 function TextBlock({ paragraphs }: { paragraphs: string[] }) {
   return (
-    <Stack gap="md" className="max-w-(--layout-content-default)">
+    <Stack gap="md">
       {paragraphs.map((paragraph) => (
         <p key={paragraph} className={bodyText}>
           {paragraph}
@@ -84,6 +92,17 @@ function ImageFrame({ image }: { image: CaseStudyImage }) {
   );
 }
 
+function Figure({ image }: { image: CaseStudyImage }) {
+  return (
+    <Stack gap="sm">
+      <ImageFrame image={image} />
+      {image.caption ? (
+        <figcaption className={captionText}>{image.caption}</figcaption>
+      ) : null}
+    </Stack>
+  );
+}
+
 function ImageGrid({
   images,
   columns = "md:grid-cols-2",
@@ -100,16 +119,49 @@ function ImageGrid({
   );
 }
 
-function MetricCard({ value, label }: { value: string; label: string }) {
+function MetricCard({
+  value,
+  label,
+  description,
+}: {
+  value: string;
+  label: string;
+  description: string;
+}) {
   return (
     <Card className="rounded-(--card-radius) border-(--card-border) shadow-(--card-shadow)">
       <CardHeader>
         <CardTitle className="text-(--color-text-primary) text-[length:var(--text-style-h2-font-size)] font-(--text-style-h2-font-weight) leading-(--text-style-h2-line-height) tracking-(--text-style-h2-letter-spacing)">
           {value}
         </CardTitle>
+        <p className={captionText}>{label}</p>
       </CardHeader>
       <CardContent>
-        <CardDescription className={bodyText}>{label}</CardDescription>
+        <CardDescription className={bodyText}>{description}</CardDescription>
+      </CardContent>
+    </Card>
+  );
+}
+
+function RoleCard({ title, items }: { title: string; items: string[] }) {
+  return (
+    <Card className="rounded-(--card-radius) border-(--card-border)">
+      <CardHeader>
+        <CardTitle className={h3Text}>{title}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <Stack gap="sm">
+          {items.map((item) => (
+            <div key={item} className="flex items-start gap-(--space-sm)">
+              <Icon
+                name="check"
+                size="sm"
+                className="mt-1 text-(--color-action-primary)"
+              />
+              <p className={bodyText}>{item}</p>
+            </div>
+          ))}
+        </Stack>
       </CardContent>
     </Card>
   );
@@ -128,17 +180,25 @@ export function DesignSystemCaseStudy() {
               </a>
             </Button>
 
-            <Stack gap="lg" className="max-w-(--layout-content-wide)">
+            <Stack gap="lg">
+              <p className={captionText}>
+                Case Study · DoorDash · 2021–2025
+              </p>
               <h1 className="text-(--color-text-primary) text-[length:var(--text-style-display-font-size)] font-(--text-style-display-font-weight) leading-(--text-style-display-line-height) tracking-(--text-style-display-letter-spacing)">
                 {caseStudyTitle}
               </h1>
-              <Stack gap="md" className="max-w-(--layout-content-default)">
-                {openingSummary.map((paragraph) => (
-                  <p key={paragraph} className={bodyLargeText}>
-                    {paragraph}
-                  </p>
+              <p className={bodyLargeText}>{heroSummary}</p>
+              <Inline gap="xs" className="w-full justify-between gap-y-(--space-xs)">
+                {tags.map((tag) => (
+                  <Badge
+                    key={tag}
+                    variant="secondary"
+                    className="rounded-(--badge-shape-radius) border-0 bg-(--badge-secondary-background) text-(--badge-secondary-text)"
+                  >
+                    {tag}
+                  </Badge>
                 ))}
-              </Stack>
+              </Inline>
             </Stack>
 
             <ImageFrame image={caseStudyImages.hero} />
@@ -147,82 +207,27 @@ export function DesignSystemCaseStudy() {
       </section>
 
       <CaseStudySection className="bg-(--color-background-surface)">
-        <SectionHeader title="The problem" />
-        <TextBlock paragraphs={problem} />
-        <ImageFrame image={caseStudyImages.threeProducts} />
-      </CaseStudySection>
-
-      <CaseStudySection>
-        <SectionHeader title="My scope" />
-        <TextBlock paragraphs={scope} />
-      </CaseStudySection>
-
-      <CaseStudySection className="bg-(--color-background-surface)">
-        <SectionHeader title="What I built & why" />
-        <Stack gap="3xl">
-          <Stack gap="lg">
-            <h3 className={h3Text}>
-              Architecture — the dual-layer customization model
-            </h3>
-            <TextBlock paragraphs={architecture} />
-            <ImageGrid
-              images={[
-                caseStudyImages.componentList,
-                caseStudyImages.systemPillars,
-              ]}
-            />
-          </Stack>
-
-          <Stack gap="lg">
-            <h3 className={h3Text}>Accessibility — from 20% to 100%</h3>
-            <TextBlock paragraphs={accessibility} />
-          </Stack>
-
-          <Stack gap="lg">
-            <h3 className={h3Text}>
-              Developer tooling — making the system self-serve
-            </h3>
-            <TextBlock paragraphs={developerTooling} />
-            <ImageGrid
-              images={[
-                caseStudyImages.templateDoc,
-                caseStudyImages.directionDoc,
-                caseStudyImages.namingGuide,
-              ]}
-              columns="md:grid-cols-2 lg:grid-cols-3"
-            />
-          </Stack>
-
-          <Stack gap="lg">
-            <h3 className={h3Text}>Design-to-code process</h3>
-            <TextBlock paragraphs={designToCode} />
-            <ImageGrid
-              images={[
-                caseStudyImages.directionSlides,
-                caseStudyImages.reviewSlide,
-                caseStudyImages.specs,
-                caseStudyImages.listCell,
-                caseStudyImages.zoom,
-              ]}
-              columns="md:grid-cols-2"
-            />
-          </Stack>
-        </Stack>
-      </CaseStudySection>
-
-      <CaseStudySection>
-        <SectionHeader title="Component spotlight — Quantity Stepper" />
-        <TextBlock paragraphs={quantityStepper} />
-        <ImageFrame image={caseStudyImages.stepper} />
-      </CaseStudySection>
-
-      <CaseStudySection className="bg-(--color-background-surface)">
-        <SectionHeader title="What I'd do differently" />
-        <TextBlock paragraphs={differently} />
-      </CaseStudySection>
-
-      <CaseStudySection>
-        <SectionHeader title="Impact" />
+        <div className="grid gap-(--space-md) md:grid-cols-2 lg:grid-cols-3">
+          {projectDetails.map((detail) => (
+            <Card
+              key={detail.label}
+              className={`justify-center rounded-(--card-radius) border-(--card-border) ${
+                detail.span === "wide"
+                  ? "lg:col-span-3"
+                  : detail.span === "two"
+                    ? "lg:col-span-2"
+                    : ""
+              }`}
+            >
+              <CardHeader className="pb-6">
+                <p className={captionText}>{detail.label}</p>
+                <CardTitle className="text-(--color-text-primary) text-[length:var(--text-style-body-font-size)] font-(--text-style-h3-font-weight) leading-(--text-style-body-line-height)">
+                  {detail.value}
+                </CardTitle>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
         <div className="grid gap-(--space-md) md:grid-cols-2 lg:grid-cols-4">
           {impactMetrics.map((metric) => (
             <MetricCard key={metric.value} {...metric} />
@@ -230,10 +235,87 @@ export function DesignSystemCaseStudy() {
         </div>
       </CaseStudySection>
 
+      <CaseStudySection>
+        <SectionHeader eyebrow="The problem" title="A silent killer" />
+        <TextBlock paragraphs={problem} />
+        <ImageGrid
+          images={[caseStudyImages.productUi, caseStudyImages.collab]}
+        />
+        <Card className="rounded-(--card-radius) border-(--card-border) border-l-4 border-l-(--color-action-primary) bg-(--color-background-surface)">
+          <CardContent className="pt-6">
+            <p className={`${bodyLargeText} text-(--color-text-primary)`}>
+              {problemCallout}
+            </p>
+          </CardContent>
+        </Card>
+        <TextBlock paragraphs={problemClosing} />
+      </CaseStudySection>
+
       <CaseStudySection className="bg-(--color-background-surface)">
-        <SectionHeader title="Figma Schema 2022" />
-        <TextBlock paragraphs={figmaSchema} />
-        <ImageFrame image={caseStudyImages.conference} />
+        <SectionHeader
+          eyebrow="The approach"
+          title="Borrow the pattern. Translate the principle."
+        />
+        <TextBlock paragraphs={approachIntro} />
+        <Figure image={caseStudyImages.headless} />
+        <TextBlock paragraphs={approachListCell} />
+        <Stack gap="sm">
+          <ImageGrid
+            images={[caseStudyImages.listCell, caseStudyImages.componentList]}
+          />
+          {caseStudyImages.componentList.caption ? (
+            <figcaption className={captionText}>
+              {caseStudyImages.componentList.caption}
+            </figcaption>
+          ) : null}
+        </Stack>
+
+        <Stack gap="lg">
+          <h3 className={h3Text}>The pipeline</h3>
+          <TextBlock paragraphs={pipeline} />
+          <Figure image={caseStudyImages.pipeline} />
+        </Stack>
+      </CaseStudySection>
+
+      <CaseStudySection>
+        <SectionHeader
+          eyebrow="The outcome"
+          title="Engineers stopped leaving the system"
+        />
+        <TextBlock paragraphs={outcome} />
+        <Figure image={caseStudyImages.systemOffering} />
+      </CaseStudySection>
+
+      <CaseStudySection className="bg-(--color-background-surface)">
+        <SectionHeader
+          eyebrow="My role"
+          title="What I owned, what I drove"
+        />
+        <TextBlock paragraphs={roleIntro} />
+        <div className="grid gap-(--space-md) md:grid-cols-2">
+          <RoleCard title="Owned end to end" items={roleOwned} />
+          <RoleCard title="Drove as part of a larger effort" items={roleDrove} />
+        </div>
+      </CaseStudySection>
+
+      <CaseStudySection>
+        <SectionHeader
+          eyebrow="Reflection"
+          title="What I'd do differently"
+        />
+        <Stack gap="md" className="max-w-(--layout-content-default)">
+          {reflections.map((reflection) => (
+            <div
+              key={reflection.number}
+              className="flex items-start gap-(--space-md)"
+            >
+              <span className="text-(--color-text-muted) text-[length:var(--text-style-h3-font-size)] font-(--text-style-h3-font-weight) leading-(--text-style-h3-line-height)">
+                {reflection.number}
+              </span>
+              <p className={bodyText}>{reflection.text}</p>
+            </div>
+          ))}
+        </Stack>
         <Inline gap="md">
           <Button asChild>
             <a href={designSystemCaseStudyLinks.portfolio}>

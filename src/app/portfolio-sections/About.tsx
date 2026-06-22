@@ -4,42 +4,83 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 
+const bio = [
+  "Hi, I'm Ayanna, a UX Engineer working at the intersection of design craft, front-end engineering, and developer experience. At DoorDash I was a core architect on the cross-platform team that rebuilt a design system spanning iOS, Android, and web, growing adoption from 40% to 95%. Then I moved to the product side and shipped on top of what we built.",
+  "That loop changed everything. I stopped assuming what “developer-friendly” meant and started building from lived experience.",
+  "In 2022 I spoke at Figma Schema on building one design system across multiple teams, products, and native platforms without losing native-first principles. Design, code, and collaboration at scale. That's still the work I care most about.",
+  "If you're building a team where design and engineering are genuine partners, I'd love to talk.",
+];
+
+const lenses = [
+  {
+    label: "The user",
+    description: "The person experiencing the product.",
+  },
+  {
+    label: "The designer",
+    description: "The person expressing their intent.",
+  },
+  {
+    label: "The engineer",
+    description: "The person implementing it faithfully, and fast.",
+  },
+];
+
 const skills = [
   "Design Systems",
   "UX Engineering",
-  "Front-End Architecture",
-  "Accessibility",
+  "Headless Component Architecture",
+  "Design-to-Code Workflows",
+  "Design Tokens",
+  "Accessibility (WCAG)",
   "React",
   "TypeScript",
-  "Figma",
-  "AI-Assisted Development",
   "Next.js",
-  "iOS / Swift",
-  "Component Libraries",
-  "Design Tokens",
+  "SwiftUI",
+  "Kotlin Multiplatform",
+  "Server-Driven UI",
+  "Generative UI",
+  "MCP Workflows",
+  "AI-Assisted Development",
+  "Figma",
+  "Figma Code Connect",
   "Storybook",
-  "Tailwind CSS",
-  "Node.js",
-  "Git / CI/CD",
+  "CI/CD",
 ];
 
-const highlights = [
+const experience = [
   {
-    label: "Systems Thinker",
-    description:
-      "I build foundations — tokens, primitives, patterns — so teams ship faster with less inconsistency.",
+    role: "Lead Frontend Engineer",
+    company: "DoorDash · Affordability Platform",
+    period: "2025 – 2026",
   },
   {
-    label: "Engineer + Designer",
-    description:
-      "Fluent in Figma and TypeScript. I close the gap between design intent and production reality.",
+    role: "Design Systems Engineer",
+    company: "DoorDash · Prism",
+    period: "2021 – 2025",
   },
   {
-    label: "Accessibility First",
-    description:
-      "WCAG 2.1 AA compliance is a baseline. Semantic HTML, ARIA patterns, and keyboard nav are standard practice.",
+    role: "Software Engineer 2",
+    company: "Greenlight Financial Technology",
+    period: "2020 – 2021",
+  },
+  {
+    role: "iOS Developer",
+    company: "Wunderman Thompson Mobile",
+    period: "2016 – 2020",
   },
 ];
+
+const talk = {
+  src: "https://www.youtube.com/embed/jgueTz72ZMQ",
+  title:
+    "Ayanna Humes at Figma Schema 2022: Creating DoorDash's Native Mobile Design System",
+};
+
+const captionText =
+  "text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) tracking-(--text-style-caption-letter-spacing) uppercase";
+const bodyText =
+  "text-(--color-text-secondary) text-[length:var(--text-style-body-font-size)] font-(--text-style-body-font-weight) leading-(--text-style-body-line-height) tracking-(--text-style-body-letter-spacing)";
 
 export function About() {
   return (
@@ -47,34 +88,46 @@ export function About() {
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Section header */}
         <div className="mb-8">
-          <p className="mb-3 text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) tracking-(--text-style-caption-letter-spacing) uppercase">
-            About
-          </p>
-          <h2 className="max-w-2xl text-(--color-text-primary) text-[length:var(--text-style-h1-font-size)] font-(--text-style-h1-font-weight) leading-(--text-style-h1-line-height) tracking-(--text-style-h1-letter-spacing)">
-            Engineering the layer between design and production.
-          </h2>
+          <p className={`mb-3 ${captionText}`}>About</p>
+          <h1 className="max-w-4xl text-(--color-text-primary) text-[length:var(--text-style-h1-font-size)] font-(--text-style-h1-font-weight) leading-(--text-style-h1-line-height) tracking-(--text-style-h1-letter-spacing)">
+            The best design systems don't just organize components. They change
+            how teams think.
+          </h1>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-12">
-          {/* Bio */}
+          {/* Bio + story */}
           <div>
-            {/* Highlights */}
-            <div className="space-y-5">
-              {highlights.map((h) => (
-                <div key={h.label} className="flex gap-4">
-                  <div className="mt-1 size-5 shrink-0 rounded-full bg-(--color-text-primary) flex items-center justify-center">
-                    <div className="size-1.5 rounded-full bg-(--color-text-inverse)" />
-                  </div>
-                  <div>
-                    <p className="mb-1 text-(--color-text-primary) text-[length:var(--text-style-body-font-size)] font-(--text-style-h3-font-weight) leading-(--text-style-body-line-height)">
-                      {h.label}
-                    </p>
-                    <p className="text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-body-font-weight) leading-(--text-style-body-line-height)">
-                      {h.description}
-                    </p>
-                  </div>
-                </div>
+            <div className="space-y-4">
+              {bio.map((paragraph) => (
+                <p key={paragraph} className={bodyText}>
+                  {paragraph}
+                </p>
               ))}
+            </div>
+
+            {/* Triple lens */}
+            <div className="mt-8">
+              <p className={`mb-4 ${captionText}`}>
+                I build with empathy for three people
+              </p>
+              <div className="space-y-5">
+                {lenses.map((lens) => (
+                  <div key={lens.label} className="flex gap-4">
+                    <div className="mt-1 size-5 shrink-0 rounded-full bg-(--color-text-primary) flex items-center justify-center">
+                      <div className="size-1.5 rounded-full bg-(--color-text-inverse)" />
+                    </div>
+                    <div>
+                      <p className="mb-1 text-(--color-text-primary) text-[length:var(--text-style-body-font-size)] font-(--text-style-h3-font-weight) leading-(--text-style-body-line-height)">
+                        {lens.label}
+                      </p>
+                      <p className="text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-body-font-weight) leading-(--text-style-body-line-height)">
+                        {lens.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <img
@@ -85,11 +138,24 @@ export function About() {
             />
           </div>
 
-          {/* Skills */}
+          {/* Talk + skills + experience */}
           <div>
-            <p className="mb-6 text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) tracking-(--text-style-caption-letter-spacing) uppercase">
-              Core skills &amp; tools
-            </p>
+            {/* Figma Schema talk */}
+            <div className="mb-8">
+              <p className={`mb-3 ${captionText}`}>Figma Schema 2022 · Talk</p>
+              <div className="aspect-video w-full overflow-hidden rounded-(--card-radius) border border-(--card-border) shadow-(--card-shadow)">
+                <iframe
+                  className="h-full w-full"
+                  src={talk.src}
+                  title={talk.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+
+            <p className={`mb-6 ${captionText}`}>Core skills &amp; tools</p>
             <div className="flex flex-wrap gap-2">
               {skills.map((skill) => (
                 <Badge
@@ -108,30 +174,9 @@ export function About() {
                 Experience
               </p>
               <div className="space-y-4">
-                {[
-                  {
-                    role: "Full-Stack Software Engineer",
-                    company: "DoorDash",
-                    period: "2025 – 2026",
-                  },
-                  {
-                    role: "Design Systems Engineer",
-                    company: "DoorDash",
-                    period: "2021 – 2025",
-                  },
-                  {
-                    role: "Software Engineer II",
-                    company: "Greenlight Finacial Technology",
-                    period: "2020 – 2021",
-                  },
-                  {
-                    role: "iOS Engineer",
-                    company: "Wunderman Thompson Mobile",
-                    period: "2016 – 2020",
-                  },
-                ].map((exp) => (
+                {experience.map((exp) => (
                   <div
-                    key={exp.role}
+                    key={exp.company}
                     className="flex items-start justify-between gap-4"
                   >
                     <div>

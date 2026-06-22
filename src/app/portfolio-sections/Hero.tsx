@@ -4,7 +4,11 @@ import { Button } from "@/design-system/components/button";
 export function Hero() {
   const handleLink = (href: string) => {
     const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (!el) return;
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    el.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth" });
   };
 
   return (
@@ -15,7 +19,7 @@ export function Hero() {
       <div className="relative max-w-7xl mx-auto px-6 md:px-8 w-full py-12 md:py-16">
         <div className="grid grid-cols-1 gap-16 items-center">
           {/* Text content */}
-          <div className="max-w-3xl">
+          <div className="w-full">
             {/* Available badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-(--badge-shape-radius) border border-(--badge-outline-border) bg-(--badge-outline-background) text-(--badge-outline-text) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) tracking-(--text-style-caption-letter-spacing) mb-8 shadow-(--card-shadow)">
               <span className="size-1.5 rounded-full bg-(--color-feedback-success) animate-pulse" />
@@ -27,10 +31,10 @@ export function Hero() {
               Production-Ready Interfaces.
             </h1>
 
-            <p className="mb-10 max-w-2xl text-(--color-text-muted) text-[length:var(--text-style-body-lg-font-size)] font-(--text-style-body-lg-font-weight) leading-(--text-style-body-lg-line-height) tracking-(--text-style-body-lg-letter-spacing)">
-              Senior UX Engineer with a background in iOS engineering, design
-              systems, front-end architecture, and AI-assisted development
-              workflows.
+            <p className="mb-10 text-(--color-text-muted) text-[length:var(--text-style-body-lg-font-size)] font-(--text-style-body-lg-font-weight) leading-(--text-style-body-lg-line-height) tracking-(--text-style-body-lg-letter-spacing)">
+              UX Engineer with a background in mobile and web engineering,
+              design systems, front-end architecture, and AI-assisted
+              development workflows.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -49,13 +53,13 @@ export function Hero() {
                 className="gap-2"
                 onClick={() =>
                   window.open(
-                    `${import.meta.env.BASE_URL}/ayanna-humes-resume.pdf`,
+                    `${import.meta.env.BASE_URL}/ayanna-humes-resume-update.pdf`,
                     "_blank",
                   )
                 }
               >
                 <a
-                  href={`${import.meta.env.BASE_URL}/ayanna-humes-resume.pdf`}
+                  href={`${import.meta.env.BASE_URL}/ayanna-humes-resume-update.pdf`}
                   download
                 >
                   <Icon name="download" size="sm" />

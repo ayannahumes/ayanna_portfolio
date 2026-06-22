@@ -35,26 +35,26 @@ const caseStudies: CaseStudy[] = [
   {
     id: "portfolio-ds",
     company: "DoorDash",
-    title: "Prism iOS Design System",
+    title: "DoorDash Design System Reimagined",
     overview:
-      "Rebuilt DoorDash's native iOS design system with scalable SwiftUI architecture, accessibility standards, and self-serve tooling that grew adoption from 40% to 95%.",
+      "Engineers were leaving the design system every time a design deviated from the default. Headless SwiftUI components let them keep visual flexibility while inheriting accessibility, dark mode, and tokens, which grew adoption from 40% to 95% across three products.",
     image: {
       src: `${baseUrl}case-studies/prism-ios/dd-card.jpg`,
       alt: "DoorDash design system components arranged on a soft red background",
     },
-    year: "2024",
+    year: "2021–2025",
   },
   {
     id: "doordash",
     company: "DoorDash",
-    title: "Affordability Platform",
+    title: "Carousel Debugger",
     overview:
       "Designed and prototyped a debugging experience for DoorDash's affordability carousel, making promotion logic easier for teams to inspect, explain, and troubleshoot.",
     image: {
       src: `${baseUrl}case-studies/prism-ios/affordability-carousel.png`,
       alt: "DoorDash affordability carousel showing weekly deals on the consumer homepage",
     },
-    year: "2025",
+    year: "2025–2026",
   },
 ];
 
@@ -64,11 +64,11 @@ export function CaseStudies() {
   > = {
     doordash: {
       href: generativeUiLinks.caseStudy,
-      label: "Read the Generative UI for Platform Debugging case study",
+      label: "Read the Carousel Debugger case study",
     },
     "portfolio-ds": {
       href: designSystemCaseStudyLinks.caseStudy,
-      label: "Read the Prism iOS Design System case study",
+      label: "Read the DoorDash Design System Reimagined case study",
     },
   };
 

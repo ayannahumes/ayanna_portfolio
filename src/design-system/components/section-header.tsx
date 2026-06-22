@@ -14,7 +14,7 @@ function SectionHeader({
   className?: string;
 }) {
   return (
-    <header data-slot="section-header" className={cn("max-w-(--layout-content-default)", className)}>
+    <header data-slot="section-header" className={cn(className)}>
       {eyebrow ? (
         <p className="mb-(--space-sm) text-(--color-text-muted) text-[length:var(--text-style-caption-font-size)] font-(--text-style-caption-font-weight) leading-(--text-style-caption-line-height) tracking-(--text-style-caption-letter-spacing) uppercase">
           {eyebrow}
